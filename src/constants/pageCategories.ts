@@ -1,0 +1,17 @@
+export const PAGE_CATEGORIES = [
+  { value: "business", label: "Business" },
+  { value: "restaurant", label: "Restaurant / Café" },
+  { value: "shopping", label: "Shopping & Retail" },
+  { value: "creator", label: "Creator / Public Figure" },
+  { value: "musician", label: "Musician / Band" },
+  { value: "artist", label: "Artist" },
+  { value: "community", label: "Community Organization" },
+  { value: "nonprofit", label: "Nonprofit" },
+  { value: "sports", label: "Sports Team" },
+  { value: "entertainment", label: "Entertainment" },
+  { value: "education", label: "Education" },
+  { value: "health", label: "Health & Wellness" },
+  { value: "tech", label: "Technology" },
+  { value: "media", label: "Media / News" },
+  { value: "other", label: "Other" },
+] as const;

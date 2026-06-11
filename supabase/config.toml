@@ -1,0 +1,7 @@
+project_id = "hvpjyvhnbnkmjxmlxxkx"
+
+[functions.setup-admin]
+verify_jwt = false
+
+[functions.seed-demo]
+verify_jwt = false

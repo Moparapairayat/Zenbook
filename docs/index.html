@@ -1,0 +1,2358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xBook Documentation — v1.0.0 | WRAPCODERS</title>
+    <meta name="description" content="Complete documentation for xBook social platform by WRAPCODERS. Setup, deployment, upgrade, features, and API reference." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="doc-header">
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+      </button>
+      <a href="#" class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect width="28" height="28" rx="6" fill="#247b7b" />
+          <path d="M8 9h12M8 14h8M8 19h10" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <span>xBook Docs</span>
+      </a>
+      <span class="version-badge">v1.0.0</span>
+      <div class="search-box">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <input type="text" placeholder="Search docs… (Ctrl+K)" />
+      </div>
+      <div class="header-links">
+        <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>
+        <a href="#changelog">Changelog</a>
+      </div>
+    </header>
+
+    <!-- ═══════════ SIDEBAR ═══════════ -->
+    <nav class="doc-sidebar">
+      <!-- 1 — Getting Started -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Getting Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#introduction">Introduction</a>
+          <a href="#requirements">1. Requirements</a>
+          <a href="#installation">2. Install &amp; Setup</a>
+          <a href="#environment">3. Environment Variables</a>
+          <a href="#setup-wizard">4. First-Run Wizard</a>
+          <a href="#build-compile">5. Build &amp; Compile</a>
+          <a href="#deployment">6. Deploy to Production</a>
+        </div>
+      </div>
+
+      <!-- 2 — Upgrade & Migrate -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Upgrade &amp; Migrate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#upgrade-overview">Upgrade Overview</a>
+          <a href="#upgrade-frontend">Frontend Update</a>
+          <a href="#upgrade-backend">Backend / Database</a>
+          <a href="#upgrade-edge-functions">Edge Functions</a>
+          <a href="#upgrade-storage">Storage Buckets</a>
+          <a href="#upgrade-checklist">Pre-flight Checklist</a>
+          <a href="#rollback">Rollback Procedure</a>
+        </div>
+      </div>
+
+      <!-- 3 — Core Features -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Core Features <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#authentication">Authentication</a>
+          <a href="#user-profiles">User Profiles</a>
+          <a href="#posts">Posts &amp; Feed</a>
+          <a href="#stories">Stories &amp; Reels</a>
+          <a href="#messaging">Messaging</a>
+          <a href="#groups">Groups</a>
+          <a href="#pages">Pages</a>
+          <a href="#events">Events</a>
+          <a href="#marketplace">Marketplace</a>
+          <a href="#watch">Watch</a>
+          <a href="#notifications">Notifications</a>
+          <a href="#search">Global Search</a>
+        </div>
+      </div>
+
+      <!-- 4 — Monetization -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Monetization <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#credits-system">Credits System</a>
+          <a href="#advertising">Advertising &amp; Ads</a>
+          <a href="#boost-promotions">Boost &amp; Promotions</a>
+        </div>
+      </div>
+
+      <!-- 5 — Admin Panel -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Admin Panel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#admin-overview">Admin Overview</a>
+          <a href="#admin-users">User Management</a>
+          <a href="#admin-settings">Admin Settings (11 tabs)</a>
+          <a href="#admin-design">Site Design</a>
+          <a href="#admin-cms">CMS Pages</a>
+          <a href="#admin-moderation">Moderation</a>
+          <a href="#admin-ads">Ad Management</a>
+        </div>
+      </div>
+
+      <!-- 6 — Advanced -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Advanced <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#demo-mode">Demo / Test Mode</a>
+          <a href="#storage">File Storage</a>
+          <a href="#edge-functions">Backend Functions</a>
+          <a href="#rls-security">Security &amp; RLS</a>
+          <a href="#realtime">Realtime</a>
+          <a href="#roles">User Roles &amp; RBAC</a>
+        </div>
+      </div>
+
+      <!-- 7 — Reference -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          Reference <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        <div class="sidebar-links">
+          <a href="#database-schema">Database Schema</a>
+          <a href="#api-reference">API Reference</a>
+          <a href="#project-structure">Project Structure</a>
+          <a href="#changelog">Changelog</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#faq">FAQ</a>
+          <a href="#credits">Credits</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════ MAIN CONTENT ═══════════ -->
+    <main class="doc-main">
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 1: GETTING STARTED         ║
+     ╚══════════════════════════════════════╝ -->
+
+      <!-- ────── INTRODUCTION ────── -->
+      <section class="doc-section" id="introduction">
+        <h2>Introduction</h2>
+        <p><strong>xBook</strong> is a production-ready, full-stack social networking platform built with <strong>React 18</strong>, <strong>TypeScript 5</strong>, <strong>Vite 5</strong>, <strong>Tailwind CSS v3</strong>, and powered by <strong>Supabase</strong> (PostgreSQL, Auth, Storage, Edge Functions, Realtime). Designed and maintained by <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>.</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">👥</div>
+            <h5>Social Networking</h5>
+            <p>Posts, stories, reels, friends, groups, pages, events, and real-time messaging.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛒</div>
+            <h5>Marketplace</h5>
+            <p>Buy &amp; sell with listings, offers, seller reviews, verified sellers, and fraud detection.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎬</div>
+            <h5>Watch &amp; Reels</h5>
+            <p>Video platform with playlists, live streaming indicators, likes, and comments.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h5>Admin &amp; Moderation</h5>
+            <p>Full admin panel with user management, content moderation, CMS, and site design.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">💰</div>
+            <h5>Credits &amp; Advertising</h5>
+            <p>Credits economy with top-up, gifting, sponsored posts, boost pages/posts/listings.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🔐</div>
+            <h5>Enterprise Security</h5>
+            <p>Row-Level Security on 50+ tables, RBAC roles, content reports, user warnings &amp; bans.</p>
+          </div>
+        </div>
+
+        <div class="callout info">
+          <strong>📖 How to Read This Documentation</strong>
+          Follow sections 1–6 in order for a fresh install. If you're upgrading an existing installation, skip to <a href="#upgrade-overview">Upgrade &amp; Migrate</a>. For feature details, see <a href="#authentication">Core Features</a> and <a href="#credits-system">Monetization</a>.
+        </div>
+
+        <div class="callout success">
+          <strong>🏢 Built by WRAPCODERS</strong>
+          xBook is designed, developed, and maintained by <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>. For support, custom development, or licensing inquiries, visit our website.
+        </div>
+      </section>
+
+      <!-- ────── REQUIREMENTS ────── -->
+      <section class="doc-section" id="requirements">
+        <h2>1. System Requirements</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Minimum</th>
+              <th>Recommended</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Node.js</td>
+              <td>18.x</td>
+              <td>20.x LTS</td>
+            </tr>
+            <tr>
+              <td>Package Manager</td>
+              <td>npm 9+ or bun 1.x</td>
+              <td>bun 1.x (fastest)</td>
+            </tr>
+            <tr>
+              <td>Git</td>
+              <td>2.x</td>
+              <td>Latest</td>
+            </tr>
+            <tr>
+              <td>Operating System</td>
+              <td>macOS, Linux, Windows (WSL2)</td>
+              <td>Ubuntu 22.04+</td>
+            </tr>
+            <tr>
+              <td>RAM</td>
+              <td>2 GB</td>
+              <td>4 GB+</td>
+            </tr>
+            <tr>
+              <td>Disk</td>
+              <td>500 MB</td>
+              <td>1 GB+</td>
+            </tr>
+            <tr>
+              <td>Browser (for testing)</td>
+              <td>Chrome 90+, Firefox 90+, Safari 15+</td>
+              <td>Latest stable</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Backend Requirements</h3>
+        <ul>
+          <li><strong>Supabase project</strong> — with PostgreSQL, Auth, Storage, Edge Functions, and Realtime enabled</li>
+          <li><strong>Supabase CLI</strong> (optional) — for local development and running migrations manually</li>
+        </ul>
+      </section>
+
+      <!-- ────── INSTALLATION ────── -->
+      <section class="doc-section" id="installation">
+        <h2>2. Install &amp; Setup</h2>
+        <p>Follow these steps <strong>in exact order</strong> for a fresh installation:</p>
+        <ol class="step-list">
+          <li>
+            <strong>Clone the Repository</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+git clone https://github.com/your-org/xbook.git
+cd xbook</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Install Dependencies</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+# Recommended (fast)
+bun install
+
+# Alternative
+npm install</pre
+              >
+            </div>
+            <p>This installs ~80 packages including React, Tailwind, Supabase SDK, Leaflet, Recharts, and shadcn/ui components.</p>
+          </li>
+          <li>
+            <strong>Configure Environment Variables</strong>
+            <p>See <a href="#environment">Step 3: Environment Variables</a> below for the full list.</p>
+          </li>
+          <li>
+            <strong>Run Database Migrations</strong>
+            <p>If self-hosting with your own Supabase, apply all migrations from the <code>supabase/migrations/</code> folder:</p>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+# Link your Supabase project
+supabase link --project-ref YOUR_PROJECT_REF
+
+# Push all migrations
+supabase db push</pre
+              >
+            </div>
+            <div class="callout info">
+              <strong>ℹ️ WRAPCODERS Cloud Users</strong>
+              If you built this project on the WRAPCODERS platform, migrations are applied automatically. Skip this step.
+            </div>
+          </li>
+          <li>
+            <strong>Start the Development Server</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>bun dev    # or: npm run dev</pre>
+            </div>
+            <p>Opens at <code>http://localhost:8080</code> (Vite dev server with HMR).</p>
+          </li>
+          <li>
+            <strong>Run the First-Run Wizard</strong>
+            <p>On first launch, you'll be redirected to <code>/setup</code>. See <a href="#setup-wizard">Step 4</a>.</p>
+          </li>
+        </ol>
+
+        <div class="callout success">
+          <strong>✅ Quick Start Summary</strong>
+          <code>git clone → bun install → configure .env → supabase db push → bun dev → /setup</code>
+        </div>
+      </section>
+
+      <!-- ────── ENVIRONMENT ────── -->
+      <section class="doc-section" id="environment">
+        <h2>3. Environment Variables</h2>
+        <p>Create a <code>.env</code> file in the project root. Variables prefixed with <code>VITE_</code> are exposed to the client bundle.</p>
+
+        <h3>Required Variables</h3>
+        <table class="doc-table env-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Status</th>
+              <th>Description</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>VITE_SUPABASE_URL</code></td>
+              <td><span class="badge badge-required">Required</span></td>
+              <td>Your Supabase project API URL</td>
+              <td><code>https://xxxx.supabase.co</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_SUPABASE_PUBLISHABLE_KEY</code></td>
+              <td><span class="badge badge-required">Required</span></td>
+              <td>Supabase anon/public key (safe for client)</td>
+              <td><code>eyJhbGci…</code></td>
+            </tr>
+            <tr>
+              <td><code>VITE_SUPABASE_PROJECT_ID</code></td>
+              <td><span class="badge badge-required">Required</span></td>
+              <td>Project ref ID (used for edge function URLs)</td>
+              <td><code>abcdefghijklmnop</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Optional Variables</h3>
+        <table class="doc-table env-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Status</th>
+              <th>Description</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>VITE_DEMO_MODE</code></td>
+              <td><span class="badge badge-optional">Optional</span></td>
+              <td>Enable demo/test mode with quick login panel (see <a href="#demo-mode">Demo Mode</a>)</td>
+              <td><code>false</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Backend Secrets (Supabase Edge Functions)</h3>
+        <p>These are set in your Supabase project dashboard (or WRAPCODERS Cloud → Secrets), <strong>not</strong> in <code>.env</code>:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Secret</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>SUPABASE_SERVICE_ROLE_KEY</code></td>
+              <td>Admin-level API access for edge functions (setup-admin, etc.)</td>
+            </tr>
+            <tr>
+              <td><code>LOVABLE_API_KEY</code></td>
+              <td>AI features (translation, etc.) — auto-set on WRAPCODERS Cloud</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Example .env File</h3>
+        <div class="code-block">
+          <div class="code-header"><span>.env</span><button class="copy-btn">Copy</button></div>
+          <pre>
+VITE_SUPABASE_URL="https://your-project.supabase.co"
+VITE_SUPABASE_PUBLISHABLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+VITE_SUPABASE_PROJECT_ID="your-project-ref"
+
+# Optional: Enable demo mode (shows quick login panel on Auth page)
+# Set to "true" for staging/demo, remove or set "false" for production
+VITE_DEMO_MODE=false</pre
+          >
+        </div>
+
+        <div class="callout warning">
+          <strong>⚠️ Security</strong>
+          Never commit <code>.env</code> to Git. The <code>.gitignore</code> already excludes it. Only <code>VITE_</code>-prefixed values reach the browser — never put service role keys in <code>VITE_</code> variables.
+        </div>
+      </section>
+
+      <!-- ────── SETUP WIZARD ────── -->
+      <section class="doc-section" id="setup-wizard">
+        <h2>4. First-Run Wizard</h2>
+        <p>The Setup Wizard runs automatically on first visit when no Super Admin exists. It creates your admin account and configures the platform.</p>
+
+        <h3>Automatic Routing</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Condition</th>
+              <th>Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>No admin in <code>user_roles</code> table</td>
+              <td>All routes redirect to <code>/setup</code></td>
+            </tr>
+            <tr>
+              <td>Admin exists, user not logged in</td>
+              <td>Protected routes redirect to <code>/auth</code></td>
+            </tr>
+            <tr>
+              <td>Admin exists, user logged in</td>
+              <td>Normal app access based on role</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Wizard Steps</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Step 1 — Create Super Admin</strong>
+            <p>Enter display name, email, and password (min 8 chars, confirmed). The account is created via a secure <code>setup-admin</code> edge function with auto-confirmed email and <code>admin</code> role assigned server-side.</p>
+          </li>
+          <li>
+            <strong>Step 2 — App Identity</strong>
+            <p>Configure site name, description, URL, and upload branding (light logo, dark logo, favicon). Assets stored in the <code>site-assets</code> storage bucket.</p>
+          </li>
+          <li>
+            <strong>Step 3 — System Settings</strong>
+            <p>Toggle user registration, email verification, maintenance mode, and select default language.</p>
+          </li>
+          <li>
+            <strong>Step 4 — Review &amp; Launch</strong>
+            <p>Summary of all config. Click "Launch Application" → sets <code>setup_complete</code> flag → redirects to home page.</p>
+          </li>
+        </ol>
+
+        <div class="callout danger">
+          <strong>🚨 One-Time Only</strong>
+          Once setup is complete, <code>/setup</code> redirects to <code>/auth</code>. The edge function blocks duplicate admin creation. To re-run setup, delete the admin row from <code>user_roles</code> and the <code>setup_complete</code> setting from <code>site_settings</code>.
+        </div>
+      </section>
+
+      <!-- ────── BUILD & COMPILE ────── -->
+      <section class="doc-section" id="build-compile">
+        <h2>5. Build &amp; Compile</h2>
+
+        <h3>Development Build</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+bun dev       # Starts Vite dev server at localhost:8080
+              # Hot Module Replacement enabled
+              # Source maps enabled</pre
+          >
+        </div>
+
+        <h3>Production Build</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+# Build for production
+bun run build     # or: npm run build
+
+# Output: dist/ directory
+# - Minified JS bundles with content hashes
+# - Optimized & purged CSS
+# - Static assets with cache-busting hashes</pre
+          >
+        </div>
+
+        <h3>Preview Production Build Locally</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+bun run preview   # or: npm run preview
+# Serves dist/ at localhost:4173</pre
+          >
+        </div>
+
+        <h3>Type Checking</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>npx tsc --noEmit   # Validate TypeScript without emitting files</pre>
+        </div>
+
+        <h3>Running Tests</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+# Unit tests (Vitest)
+bun run test
+
+# E2E tests (Playwright)
+npx playwright test</pre
+          >
+        </div>
+
+        <h3>Build Output Structure</h3>
+        <div class="code-block">
+          <div class="code-header"><span>dist/</span></div>
+          <pre>
+dist/
+├── index.html              # Entry point (SPA)
+├── assets/
+│   ├── index-[hash].js     # Main app bundle
+│   ├── index-[hash].css    # Compiled Tailwind + styles
+│   ├── vendor-[hash].js    # Third-party libraries
+│   └── *.png, *.jpg        # Optimized images
+├── favicon.png
+└── robots.txt</pre
+          >
+        </div>
+      </section>
+
+      <!-- ────── DEPLOYMENT ────── -->
+      <section class="doc-section" id="deployment">
+        <h2>6. Deploy to Production</h2>
+
+        <h3>Deployment Options</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Method</th>
+              <th>Config Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>WRAPCODERS Cloud</strong></td>
+              <td>One-click publish</td>
+              <td>Auto-handles builds, deploys, backend, and edge functions</td>
+            </tr>
+            <tr>
+              <td><strong>Vercel</strong></td>
+              <td>Connect GitHub repo</td>
+              <td>Build: <code>npm run build</code> · Output: <code>dist</code> · Framework: Vite</td>
+            </tr>
+            <tr>
+              <td><strong>Netlify</strong></td>
+              <td>Connect GitHub repo</td>
+              <td>Build: <code>npm run build</code> · Publish: <code>dist</code> · Add <code>_redirects</code></td>
+            </tr>
+            <tr>
+              <td><strong>Docker</strong></td>
+              <td>Dockerfile + nginx</td>
+              <td>See Docker section below</td>
+            </tr>
+            <tr>
+              <td><strong>VPS (nginx)</strong></td>
+              <td>Manual rsync/scp</td>
+              <td>See nginx config below</td>
+            </tr>
+            <tr>
+              <td><strong>Cloudflare Pages</strong></td>
+              <td>Connect GitHub repo</td>
+              <td>Build: <code>npm run build</code> · Output: <code>dist</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Netlify <code>_redirects</code></h3>
+        <div class="code-block">
+          <div class="code-header"><span>public/_redirects</span><button class="copy-btn">Copy</button></div>
+          <pre>/*    /index.html   200</pre>
+        </div>
+
+        <h3>Nginx Configuration (VPS)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>nginx.conf</span><button class="copy-btn">Copy</button></div>
+          <pre>
+server {
+    listen 80;
+    server_name yourdomain.com;
+    root /var/www/xbook/dist;
+    index index.html;
+
+    # SPA fallback — critical for client-side routing
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static assets aggressively
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2?)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+}</pre
+          >
+        </div>
+
+        <h3>Docker Deployment</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Dockerfile</span><button class="copy-btn">Copy</button></div>
+          <pre>
+# Stage 1: Build
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json bun.lockb ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]</pre
+          >
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+docker build -t xbook .
+docker run -p 80:80 xbook</pre
+          >
+        </div>
+
+        <h3>Post-Deploy Verification Checklist</h3>
+        <ol>
+          <li>Visit your domain — app should load correctly</li>
+          <li>Navigate to <code>/auth</code> — login page should render</li>
+          <li>Try deep links like <code>/groups</code>, <code>/events</code>, <code>/marketplace</code> — should work (not 404)</li>
+          <li>Check browser console for errors</li>
+          <li>Verify Supabase connection (login should work)</li>
+          <li>Test dark/light theme toggle</li>
+          <li>Verify file uploads (profile photo, post images)</li>
+        </ol>
+      </section>
+
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 2: UPGRADE & MIGRATE       ║
+     ╚══════════════════════════════════════╝ -->
+
+      <section class="doc-section" id="upgrade-overview">
+        <h2>Upgrade &amp; Migrate — Overview</h2>
+        <p>When a new version of xBook is released, you need to update <strong>three layers</strong>:</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">🖥️</div>
+            <h5>1. Frontend</h5>
+            <p>Pull latest code, install deps, rebuild, and redeploy the static bundle.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🗄️</div>
+            <h5>2. Database</h5>
+            <p>Apply new SQL migrations to add tables, columns, RLS policies, and functions.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h5>3. Edge Functions</h5>
+            <p>Deploy updated or new serverless functions.</p>
+          </div>
+        </div>
+        <div class="callout warning">
+          <strong>⚠️ Always Backup First</strong>
+          Before upgrading, export your database and take a snapshot of your current <code>dist/</code> folder. See <a href="#rollback">Rollback Procedure</a>.
+        </div>
+      </section>
+
+      <section class="doc-section" id="upgrade-frontend">
+        <h2>Frontend Update</h2>
+        <h3>For WRAPCODERS Cloud Projects</h3>
+        <p>Frontend updates are automatic when you click <strong>Publish → Update</strong>. No manual steps needed.</p>
+
+        <h3>For Self-Hosted / GitHub-Synced Projects</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Pull the Latest Code</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+cd xbook
+git pull origin main
+
+# If using ZIP download: extract new version
+# Keep your .env file — don't overwrite it</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Install Updated Dependencies</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+rm -rf node_modules
+bun install   # or: npm install</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Check for New Environment Variables</strong>
+            <p>Compare your <code>.env</code> against the changelog or the <a href="#environment">Environment Variables</a> section.</p>
+          </li>
+          <li>
+            <strong>Build and Test Locally</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+npx tsc --noEmit   # Type-check first
+bun run build      # Production build
+bun run preview    # Preview locally</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Deploy</strong>
+            <p>Upload the new <code>dist/</code> folder to your hosting provider (see <a href="#deployment">Deployment</a> section).</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="doc-section" id="upgrade-backend">
+        <h2>Database &amp; Backend Update</h2>
+        <p>Each release may include new SQL migrations in <code>supabase/migrations/</code>.</p>
+
+        <h3>For WRAPCODERS Cloud Projects</h3>
+        <p>Database migrations are applied <strong>automatically</strong>. No manual steps needed.</p>
+
+        <h3>For Self-Hosted Supabase</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Review New Migrations</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+              <pre>
+ls -la supabase/migrations/
+cat supabase/migrations/YYYYMMDDHHMMSS_migration_name.sql</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Apply Migrations</strong>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal — Option A: Supabase CLI</span><button class="copy-btn">Copy</button></div>
+              <pre>
+supabase link --project-ref YOUR_PROJECT_REF
+supabase db push</pre
+              >
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>Terminal — Option B: Manual SQL</span><button class="copy-btn">Copy</button></div>
+              <pre>
+psql "postgresql://postgres:YOUR_PASSWORD@db.YOUR_REF.supabase.co:5432/postgres"
+\i supabase/migrations/YYYYMMDDHHMMSS_new_migration.sql</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Verify Schema</strong>
+            <div class="code-block">
+              <div class="code-header"><span>SQL</span><button class="copy-btn">Copy</button></div>
+              <pre>
+SELECT tablename FROM pg_tables WHERE schemaname = 'public' ORDER BY tablename;
+SELECT tablename, rowsecurity FROM pg_tables WHERE schemaname = 'public' AND rowsecurity = true;</pre
+              >
+            </div>
+          </li>
+        </ol>
+        <div class="callout danger">
+          <strong>🚨 Migration Order Matters</strong>
+          Always apply migrations in chronological order (sorted by filename timestamp). Never skip a migration.
+        </div>
+      </section>
+
+      <section class="doc-section" id="upgrade-edge-functions">
+        <h2>Edge Functions Update</h2>
+        <h3>For WRAPCODERS Cloud</h3>
+        <p>Edge functions deploy <strong>automatically</strong> when code is changed. No action needed.</p>
+
+        <h3>For Self-Hosted Supabase</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+# Deploy all edge functions at once
+supabase functions deploy --all
+
+# Or deploy individually
+supabase functions deploy setup-admin
+supabase functions deploy translate-post
+supabase functions deploy embed-post
+supabase functions deploy tenor-proxy
+supabase functions deploy event-reminders
+supabase functions deploy memories-notification
+supabase functions deploy publish-scheduled-posts
+supabase functions deploy weekly-event-digest
+supabase functions deploy detect-fraud-signals
+supabase functions deploy auto-verify-sellers
+supabase functions deploy fetch-link-preview</pre
+          >
+        </div>
+        <p>Verify each function responds (should return 400 or 200, not 404):</p>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+curl -i https://YOUR_REF.supabase.co/functions/v1/setup-admin \
+  -H "Authorization: Bearer YOUR_ANON_KEY"</pre
+          >
+        </div>
+      </section>
+
+      <section class="doc-section" id="upgrade-storage">
+        <h2>Storage Buckets</h2>
+        <p>New versions may require additional storage buckets. Verify all 10 buckets exist:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Bucket</th>
+              <th>Public</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>profile-images</code></td>
+              <td>✅</td>
+              <td>Avatars and cover photos</td>
+            </tr>
+            <tr>
+              <td><code>post-images</code></td>
+              <td>✅</td>
+              <td>Post image attachments &amp; sponsored post images</td>
+            </tr>
+            <tr>
+              <td><code>post-videos</code></td>
+              <td>✅</td>
+              <td>Post video attachments</td>
+            </tr>
+            <tr>
+              <td><code>story-media</code></td>
+              <td>✅</td>
+              <td>Story photos and videos</td>
+            </tr>
+            <tr>
+              <td><code>reel-videos</code></td>
+              <td>✅</td>
+              <td>Reel video content</td>
+            </tr>
+            <tr>
+              <td><code>chat-attachments</code></td>
+              <td>✅</td>
+              <td>Messaging file attachments</td>
+            </tr>
+            <tr>
+              <td><code>listing-images</code></td>
+              <td>✅</td>
+              <td>Marketplace listing photos</td>
+            </tr>
+            <tr>
+              <td><code>group-images</code></td>
+              <td>✅</td>
+              <td>Group avatars and covers</td>
+            </tr>
+            <tr>
+              <td><code>page-images</code></td>
+              <td>✅</td>
+              <td>Page avatars and covers</td>
+            </tr>
+            <tr>
+              <td><code>site-assets</code></td>
+              <td>✅</td>
+              <td>Logos, favicons, branding</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="code-block">
+          <div class="code-header"><span>SQL — Create missing buckets</span><button class="copy-btn">Copy</button></div>
+          <pre>
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('site-assets', 'site-assets', true)
+ON CONFLICT (id) DO NOTHING;</pre
+          >
+        </div>
+      </section>
+
+      <section class="doc-section" id="upgrade-checklist">
+        <h2>Pre-Flight Upgrade Checklist</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>✓</th>
+              <th>Step</th>
+              <th>Command / Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>☐</td>
+              <td>Backup database</td>
+              <td><code>pg_dump</code> or Supabase dashboard export</td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Backup current <code>dist/</code></td>
+              <td><code>cp -r dist/ dist-backup/</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Backup <code>.env</code></td>
+              <td><code>cp .env .env.backup</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Pull latest code</td>
+              <td><code>git pull origin main</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Check for new env vars</td>
+              <td>Read changelog / env docs</td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Install dependencies</td>
+              <td><code>rm -rf node_modules && bun install</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Apply DB migrations</td>
+              <td><code>supabase db push</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Deploy edge functions</td>
+              <td><code>supabase functions deploy --all</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Check storage buckets</td>
+              <td>Verify all 10 buckets exist</td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Type-check</td>
+              <td><code>npx tsc --noEmit</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Build</td>
+              <td><code>bun run build</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Preview locally</td>
+              <td><code>bun run preview</code></td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Deploy frontend</td>
+              <td>Upload <code>dist/</code> or push to hosting</td>
+            </tr>
+            <tr>
+              <td>☐</td>
+              <td>Verify post-deploy</td>
+              <td>Test login, navigation, key features</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="rollback">
+        <h2>Rollback Procedure</h2>
+        <h3>Frontend Rollback</h3>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+rm -rf dist/
+cp -r dist-backup/ dist/
+
+# Or revert via git
+git checkout HEAD~1
+bun install && bun run build</pre
+          >
+        </div>
+
+        <h3>Database Rollback</h3>
+        <div class="callout danger">
+          <strong>🚨 Database rollbacks are destructive</strong>
+          SQL migrations cannot be automatically reversed. Restore from your backup:
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>psql "postgresql://postgres:PASSWORD@db.REF.supabase.co:5432/postgres" < backup.sql</pre>
+        </div>
+
+        <h3>WRAPCODERS Cloud Projects</h3>
+        <p>Use the built-in <strong>History</strong> feature to restore to a previous version. Click the clock icon in the editor to browse and restore past states.</p>
+      </section>
+
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 3: CORE FEATURES           ║
+     ╚══════════════════════════════════════╝ -->
+
+      <section class="doc-section" id="authentication">
+        <h2>Authentication</h2>
+        <h3>Login Methods</h3>
+        <ul>
+          <li><strong>Email &amp; Password</strong> — Standard login with optional email verification</li>
+          <li><strong>Google OAuth</strong> — One-click sign in via Google account</li>
+          <li><strong>Apple Sign-In</strong> — Sign in with Apple ID</li>
+        </ul>
+        <h3>7-Step Registration Flow</h3>
+        <ol>
+          <li>Account details (name, email, password with strength indicator)</li>
+          <li>Personal info (date of birth, gender, phone, location)</li>
+          <li>Profile photo upload with crop tool</li>
+          <li>Cover photo upload</li>
+          <li>Bio / About section</li>
+          <li>Interest selection (choose up to 8 from 14 categories)</li>
+          <li>Find friends summary &amp; submit</li>
+        </ol>
+        <h3>Password Reset</h3>
+        <p>Users click "Forgot Password" → receive reset email → redirected to <code>/reset-password</code> → set new password.</p>
+        <h3>Email Verification</h3>
+        <p>Configurable in Admin Settings. When enabled, users must verify email before accessing the app. Includes resend button with 60-second cooldown.</p>
+        <h3>Demo Mode Quick Login</h3>
+        <p>When <code>VITE_DEMO_MODE=true</code>, a "Quick Demo Login" panel appears on the auth page with three role-based accounts. See <a href="#demo-mode">Demo / Test Mode</a> for details.</p>
+      </section>
+
+      <section class="doc-section" id="user-profiles">
+        <h2>User Profiles</h2>
+        <p>Stored in the <code>profiles</code> table, auto-created on signup via database trigger.</p>
+        <h3>Profile Data</h3>
+        <ul>
+          <li>Display name, bio, location, website</li>
+          <li>Avatar &amp; cover photo with crop support (stored in <code>profile-images</code> bucket)</li>
+          <li>Date of birth, gender, phone, education, workplace</li>
+          <li>Interests (array), relationship status</li>
+          <li>Online presence (<code>last_seen_at</code> with real-time tracking)</li>
+          <li>Profile completion progress bar</li>
+        </ul>
+        <h3>Profile Tabs</h3>
+        <ul>
+          <li><strong>Posts</strong> — User's timeline</li>
+          <li><strong>About</strong> — Intro card with personal details</li>
+          <li><strong>Friends</strong> — Friend list with management</li>
+          <li><strong>Photos</strong> — Photo gallery with lightbox</li>
+          <li><strong>Check-ins</strong> — Location check-ins with map (Leaflet)</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="posts">
+        <h2>Posts &amp; Feed</h2>
+        <ul>
+          <li>Multi-image carousel, video uploads, background styles, feelings, check-in location</li>
+          <li>Privacy: Public, Friends, Only Me</li>
+          <li>6 reaction types (like, love, haha, wow, sad, angry), threaded comments</li>
+          <li>Share, save/bookmark, pin to profile, archive</li>
+          <li>Post scheduling (calendar &amp; weekly views)</li>
+          <li>Edit history with diff view, post embedding, AI translation</li>
+          <li>Link previews with OpenGraph metadata</li>
+          <li>Hide posts, report posts, disable comments per post</li>
+          <li>Boost posts with promotion credits</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="stories">
+        <h2>Stories &amp; Reels</h2>
+        <h3>Stories</h3>
+        <ul>
+          <li>Photo/video stories, 24-hour auto-expiration</li>
+          <li>Full-screen viewer with progress indicators</li>
+          <li>Reactions (emoji + optional message)</li>
+          <li>Story highlights with custom covers</li>
+          <li>Storage: <code>story-media</code> bucket (max 50MB)</li>
+        </ul>
+        <h3>Reels</h3>
+        <ul>
+          <li>Short-form video (max 100MB), upload with caption &amp; thumbnail</li>
+          <li>Like, threaded comments, share, view count</li>
+          <li>Creator follow system</li>
+          <li>Storage: <code>reel-videos</code> bucket</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="messaging">
+        <h2>Messaging</h2>
+        <p>Real-time 1:1 and group chat with full-featured messaging:</p>
+        <ul>
+          <li>Direct messages &amp; group chats (admin roles)</li>
+          <li>File, image, and voice message attachments (max 10MB)</li>
+          <li>Message reactions (emoji), read receipts, typing indicators</li>
+          <li>Pin, edit, delete, forward messages</li>
+          <li>GIF picker (Tenor proxy), emoji picker</li>
+          <li>Group chat settings (rename, avatar, add/remove members)</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="groups">
+        <h2>Groups</h2>
+        <ul>
+          <li>Public/private groups with 10 categories</li>
+          <li>Group posts with pin support, comments, reactions</li>
+          <li>Auto-created group conversation (chat linked to group)</li>
+          <li>Events with RSVP (group-scoped)</li>
+          <li>Roles: admin, moderator, member</li>
+          <li>Shareable invite links with expiration &amp; usage limits</li>
+          <li>Per-group notification preferences (mute, toggle by type)</li>
+          <li>Analytics (member growth, engagement), activity feed, rules</li>
+          <li>Hover cards for quick preview</li>
+          <li>Boost group posts with promotion credits</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="pages">
+        <h2>Pages</h2>
+        <ul>
+          <li>Business/organization pages with categories and slug URLs</li>
+          <li>Page posts with scheduling, comments, reactions</li>
+          <li>Follower system, multi-admin support</li>
+          <li>Events (page-scoped), analytics, hover cards</li>
+          <li>Contact info: email, phone, website, location</li>
+          <li>Boost entire pages and individual page posts with credits</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="events">
+        <h2>Events</h2>
+        <ul>
+          <li>10 categories: Social, Business, Education, Entertainment, Sports, Tech, Health, Arts, Community, Other</li>
+          <li>RSVP: Going, Interested, Not Going with attendee list</li>
+          <li>Recurrence: None, Daily, Weekly, Monthly, Yearly with end date</li>
+          <li>Reminders: Configurable (15min to 1 week before)</li>
+          <li>Calendar view (monthly with dots) and map view (Leaflet clustering)</li>
+          <li>Threaded comments, related events, .ics export, share modal</li>
+          <li>Weekly email digest via edge function</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="marketplace">
+        <h2>Marketplace</h2>
+        <h3>Listings</h3>
+        <ul>
+          <li>10 categories, 4 conditions, multi-image, location</li>
+          <li>Status: Active, Sold, Reserved</li>
+          <li>Templates for quick creation, price history charts</li>
+          <li>View count, save/bookmark, recently viewed</li>
+        </ul>
+        <h3>Transactions &amp; Trust</h3>
+        <ul>
+          <li>Offer system (buyer → seller with optional message)</li>
+          <li>Seller dashboard with analytics</li>
+          <li>Seller reviews &amp; ratings, verified seller badges</li>
+          <li>Automated fraud detection (edge function)</li>
+          <li>Credit-based promoted listings with targeting</li>
+          <li>Listing reports with moderation queue</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="watch">
+        <h2>Watch</h2>
+        <ul>
+          <li>Video uploads with 13 categories</li>
+          <li>Playlists (public/private), live streaming indicator</li>
+          <li>Like, threaded comments, save, view tracking</li>
+          <li>Recommendations by category</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="notifications">
+        <h2>Notifications</h2>
+        <ul>
+          <li>In-app real-time notifications with unread count badge</li>
+          <li>Types: friend requests, likes, comments, shares, group invites, event reminders, messages</li>
+          <li><strong>Credit notifications</strong>: gift received, admin gift, spending confirmation, low balance warning</li>
+          <li>Filterable by category: All, Social, Credits, Groups, Pages</li>
+          <li>Web push notifications (browser permission)</li>
+          <li>Sound alerts (toggleable), swipeable dismiss on mobile</li>
+          <li>"On This Day" memories with edge function</li>
+          <li>Mark as read (individual &amp; bulk)</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="search">
+        <h2>Global Search</h2>
+        <p>Unified search from header across users, posts, groups, pages, events, listings, and hashtags. Real-time results with categorized tabs. Hashtag pages at <code>/hashtag/:tag</code>.</p>
+      </section>
+
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 4: MONETIZATION            ║
+     ╚══════════════════════════════════════╝ -->
+
+      <section class="doc-section" id="credits-system">
+        <h2>Credits System</h2>
+        <p>xBook includes a full <strong>promotion credits economy</strong> for monetizing boosted content and advertising.</p>
+
+        <h3>Credit Balance</h3>
+        <ul>
+          <li>Each user has a <code>promotion_credits</code> record with a <code>balance</code> field</li>
+          <li>Balance shown in Credits page (<code>/credits</code>) and Advertising hub (<code>/advertising</code>)</li>
+          <li>Transaction history in <code>credit_transactions</code> table (type: spend, topup, gift, admin_gift)</li>
+        </ul>
+
+        <h3>Top-Up Methods</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Credit Packs</strong></td>
+              <td>Users purchase packs (50, 100, 250, 500, 1000 credits) via the Credits page</td>
+            </tr>
+            <tr>
+              <td><strong>Admin Gift</strong></td>
+              <td>Admins can gift credits to any user from User Management with a custom amount + message</td>
+            </tr>
+            <tr>
+              <td><strong>User-to-User Gift</strong></td>
+              <td>Users can gift credits to friends via the Gift Credits modal</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Credit Notifications</h3>
+        <ul>
+          <li><strong>Gift Received</strong> — in-app notification when someone sends you credits</li>
+          <li><strong>Admin Gift</strong> — special notification for admin-gifted bonus credits</li>
+          <li><strong>Spending Confirmation</strong> — toast after boosting posts, pages, or listings</li>
+          <li><strong>Low Balance Warning</strong> — toast alert when balance drops to ≤10 credits</li>
+        </ul>
+
+        <h3>Database Tables</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Table</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>promotion_credits</code></td>
+              <td>User credit balances</td>
+            </tr>
+            <tr>
+              <td><code>credit_transactions</code></td>
+              <td>Full ledger of all credit movements</td>
+            </tr>
+            <tr>
+              <td><code>sponsored_posts</code></td>
+              <td>Active and historical ad campaigns</td>
+            </tr>
+            <tr>
+              <td><code>promoted_listings</code></td>
+              <td>Boosted marketplace listings</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="advertising">
+        <h2>Advertising &amp; Ads</h2>
+        <p>The Advertising hub at <code>/advertising</code> provides a complete self-serve ad platform.</p>
+
+        <h3>Advertising Dashboard</h3>
+        <ul>
+          <li><strong>Dashboard tab</strong> — Quick stats (active ads, total impressions, clicks, avg CTR), performance charts with date range filters</li>
+          <li>
+            <strong>My Ads tab</strong> — Full CRUD management of all user's sponsored posts:
+            <ul>
+              <li>Status filter chips: All, Active, Paused, Expired</li>
+              <li>Per-ad stats: impressions, clicks, CTR, credits spent, date range</li>
+              <li><strong>Create</strong> — New sponsored post with ad copy, image, link URL, duration (1/3/7 days)</li>
+              <li><strong>Edit</strong> — Update content, link URL, targeting (category, location, frequency cap)</li>
+              <li><strong>Pause/Activate</strong> — Toggle ad delivery on/off</li>
+              <li><strong>Delete</strong> — Remove ad permanently</li>
+            </ul>
+          </li>
+          <li><strong>Credits tab</strong> — View balance, purchase packs, learn how credits work</li>
+        </ul>
+
+        <h3>Ad Types</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Placement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sponsored Posts</strong></td>
+              <td>User-created ads that appear in everyone's feed with "Sponsored" badge</td>
+              <td>In-feed</td>
+            </tr>
+            <tr>
+              <td><strong>Horizontal Banners</strong></td>
+              <td>HTML ad slots managed by admin (header, footer, between posts)</td>
+              <td>Above/below content</td>
+            </tr>
+            <tr>
+              <td><strong>Interstitial Ads</strong></td>
+              <td>Full-screen ads shown at navigation intervals (5 navigations, 5-min cooldown)</td>
+              <td>Full-screen overlay</td>
+            </tr>
+            <tr>
+              <td><strong>Sidebar Ads</strong></td>
+              <td>HTML ad in the sidebar area</td>
+              <td>Right sidebar</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Audience Targeting</h3>
+        <ul>
+          <li><strong>Category</strong> — Target users browsing specific marketplace categories</li>
+          <li><strong>Location</strong> — Geographic targeting</li>
+          <li><strong>Age &amp; Gender</strong> — Demographic filters (age min/max, gender)</li>
+          <li><strong>Frequency Cap</strong> — Max impressions per user in 24 hours (client-side localStorage tracking)</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="boost-promotions">
+        <h2>Boost &amp; Promotions</h2>
+        <p>Users can boost various content types using their promotion credits:</p>
+
+        <h3>Boostable Content</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Content</th>
+              <th>Location</th>
+              <th>Duration Options</th>
+              <th>Credit Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Feed Posts</strong></td>
+              <td>Post action menu → "Boost post"</td>
+              <td>3, 7, 14 days</td>
+              <td>15, 30, 50 credits</td>
+            </tr>
+            <tr>
+              <td><strong>Pages</strong></td>
+              <td>Page header → "Boost Page" button (owner only)</td>
+              <td>3, 7, 14 days</td>
+              <td>20, 40, 70 credits</td>
+            </tr>
+            <tr>
+              <td><strong>Page Posts</strong></td>
+              <td>Page post → Rocket icon (owner only)</td>
+              <td>3, 7, 14 days</td>
+              <td>15, 30, 50 credits</td>
+            </tr>
+            <tr>
+              <td><strong>Group Posts</strong></td>
+              <td>Group post dropdown → "Boost post" (author only)</td>
+              <td>3, 7, 14 days</td>
+              <td>15, 30, 50 credits</td>
+            </tr>
+            <tr>
+              <td><strong>Marketplace Listings</strong></td>
+              <td>Listing → "Promote" button</td>
+              <td>3, 7, 14 days</td>
+              <td>10, 20, 35 credits</td>
+            </tr>
+            <tr>
+              <td><strong>Sponsored Posts</strong></td>
+              <td>Advertising → "Create Ad"</td>
+              <td>1, 3, 7 days</td>
+              <td>10, 25, 50 credits</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>How Boosting Works</h3>
+        <ol>
+          <li>User clicks "Boost" on supported content</li>
+          <li>Modal displays tier options with credit costs</li>
+          <li>Credits are deducted from <code>promotion_credits</code></li>
+          <li>Transaction logged in <code>credit_transactions</code></li>
+          <li>Sponsored post created in <code>sponsored_posts</code> table with start/end dates</li>
+          <li>Content appears in feeds with "Sponsored" badge during active period</li>
+          <li>Low balance warning if remaining credits ≤10</li>
+        </ol>
+      </section>
+
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 5: ADMIN PANEL             ║
+     ╚══════════════════════════════════════╝ -->
+
+      <section class="doc-section" id="admin-overview">
+        <h2>Admin Panel</h2>
+        <p>Accessible at <code>/admin</code> — requires <code>admin</code> role. Dashboard with 11 management categories:</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">👥</div>
+            <h5>User Management</h5>
+            <p>View, search, manage users, assign roles, gift credits, issue warnings/bans.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📝</div>
+            <h5>CMS Pages</h5>
+            <p>Create static content pages (Terms, Privacy, etc.).</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⚙️</div>
+            <h5>Settings (11 tabs)</h5>
+            <p>Full platform configuration.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h5>Site Design</h5>
+            <p>Logos, favicon, theme colors, custom CSS/JS.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📊</div>
+            <h5>Analytics</h5>
+            <p>Online users, engagement metrics.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🔍</div>
+            <h5>Verification</h5>
+            <p>User and seller verification requests.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📢</div>
+            <h5>Advertisements</h5>
+            <p>Manage HTML ad slots: header, sidebar, footer, in-feed positions.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h5>Moderation</h5>
+            <p>Content reports, warnings, bans, activity log.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="admin-users">
+        <h2>User Management</h2>
+        <ul>
+          <li>Search and filter users, view full profiles</li>
+          <li>Assign/remove roles (admin, moderator)</li>
+          <li>Issue warnings, temporary bans (with duration), permanent bans</li>
+          <li>Gift promotion credits to any user with custom amount and message</li>
+          <li>View user's content reports and activity</li>
+          <li>Paginated table with 15 users per page</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="admin-settings">
+        <h2>Admin Settings (11 Categories)</h2>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Tab</th>
+              <th>Key Configurations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>General</strong></td>
+              <td>Maintenance mode, SEO URLs, basic toggles</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Users</strong></td>
+              <td>Registration on/off, default roles, profile settings</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Login &amp; Security</strong></td>
+              <td>2FA, brute-force protection, session timeout</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Website Info</strong></td>
+              <td>Site name, description, URL, contact email</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>API Keys</strong></td>
+              <td>Third-party API key management</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><strong>Files &amp; Storage</strong></td>
+              <td>Backend selection (S3, DigitalOcean, Wasabi, FTP, GCloud, Backblaze), FFMPEG toggle</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><strong>Email &amp; SMS</strong></td>
+              <td>SMTP config, SMS gateway, push notifications, HTML email templates</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><strong>AI Settings</strong></td>
+              <td>AI integration, credit-based AI monetization</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><strong>Features</strong></td>
+              <td>Toggle platform features on/off (stories, reels, marketplace, etc.)</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><strong>Payments</strong></td>
+              <td>Multi-gateway (Stripe, PayPal, etc.), subscription pricing, wallet limits</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td><strong>Mobile Apps</strong></td>
+              <td>Mobile app config and download links</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="admin-design">
+        <h2>Site Design</h2>
+        <ul>
+          <li><strong>Light &amp; Dark logos</strong> — uploaded to <code>site-assets</code> bucket, applied via <code>useSiteBranding</code> hook</li>
+          <li><strong>Favicon</strong> — dynamically updated in browser tab</li>
+          <li><strong>Theme colors</strong> — Primary palette uses teal (#247b7b) with custom design tokens</li>
+          <li><strong>Custom CSS</strong> — Inject global overrides</li>
+          <li><strong>Custom JS</strong> — Inject tracking scripts, analytics, etc.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="admin-cms">
+        <h2>CMS Pages</h2>
+        <p>Rich text editor for static pages (Terms of Service, Privacy Policy, etc.). Accessible at <code>/page/:slug</code>. Publish/unpublish toggle. Public pages readable without authentication.</p>
+      </section>
+
+      <section class="doc-section" id="admin-moderation">
+        <h2>Moderation</h2>
+        <h3>Moderator Panel (<code>/moderator</code>)</h3>
+        <p>Accessible to <code>moderator</code> or <code>admin</code> roles:</p>
+        <ul>
+          <li><strong>Content Moderation Queue</strong> — Review reported content with status tracking</li>
+          <li><strong>User Warnings &amp; Bans</strong> — Issue warnings, temp bans, permanent bans with reason</li>
+          <li><strong>Activity Log</strong> — Full audit trail of moderation actions</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="admin-ads">
+        <h2>Ad Management (Admin)</h2>
+        <p>Admin panel includes HTML ad slot management for 6 placement positions:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Slot</th>
+              <th>Placement</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Header</strong></td>
+              <td>Below nav bar, all pages</td>
+              <td>HTML banner ad</td>
+            </tr>
+            <tr>
+              <td><strong>Sidebar</strong></td>
+              <td>Bottom of home sidebar</td>
+              <td>HTML sidebar ad</td>
+            </tr>
+            <tr>
+              <td><strong>Footer</strong></td>
+              <td>Above footer, all pages</td>
+              <td>HTML banner ad</td>
+            </tr>
+            <tr>
+              <td><strong>Posts 1</strong></td>
+              <td>After 10 posts in feed</td>
+              <td>In-feed HTML ad</td>
+            </tr>
+            <tr>
+              <td><strong>Posts 2</strong></td>
+              <td>After 20 posts in feed</td>
+              <td>In-feed HTML ad</td>
+            </tr>
+            <tr>
+              <td><strong>Posts 3</strong></td>
+              <td>After 30 posts in feed</td>
+              <td>In-feed HTML ad</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Each slot supports: HTML code input, live preview, activate/pause toggle, clear, and bulk save.</p>
+      </section>
+
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 6: ADVANCED                ║
+     ╚══════════════════════════════════════╝ -->
+
+      <section class="doc-section" id="demo-mode">
+        <h2>Demo / Test Mode</h2>
+        <p>xBook includes a built-in demo mode controlled by a single environment variable. When enabled, the auth page shows a "Quick Demo Login" panel with <strong>three pre-configured accounts</strong> for testing all role levels.</p>
+
+        <h3>Enabling Demo Mode</h3>
+        <div class="code-block">
+          <div class="code-header"><span>.env</span><button class="copy-btn">Copy</button></div>
+          <pre>
+# Enable demo mode (shows quick login panel)
+VITE_DEMO_MODE=true</pre
+          >
+        </div>
+
+        <h3>Disabling Demo Mode (Production)</h3>
+        <div class="code-block">
+          <div class="code-header"><span>.env</span><button class="copy-btn">Copy</button></div>
+          <pre>
+# Disable demo mode (standard login only, no credentials exposed)
+VITE_DEMO_MODE=false
+
+# Or simply remove the variable — defaults to disabled</pre
+          >
+        </div>
+
+        <h3>Demo Accounts</h3>
+        <p>When demo mode is enabled, the following accounts appear as one-click login buttons:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Access Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>👤 <strong>User</strong></td>
+              <td><code>user@demo.com</code></td>
+              <td><code>User123!</code></td>
+              <td>Standard — all social features, marketplace, credits</td>
+            </tr>
+            <tr>
+              <td>🛡️ <strong>Moderator</strong></td>
+              <td><code>moderator@demo.com</code></td>
+              <td><code>Moderator123!</code></td>
+              <td>Standard + Moderator Panel (content reports, warnings, bans)</td>
+            </tr>
+            <tr>
+              <td>⚙️ <strong>Admin</strong></td>
+              <td><code>admin@demo.com</code></td>
+              <td><code>Admin123!</code></td>
+              <td>Full access — Admin Panel, all settings, user management</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Behavior Summary</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Mode</th>
+              <th>Auth Page</th>
+              <th>Credentials Visible?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>VITE_DEMO_MODE=true</code></td>
+              <td>"Quick Demo Login" panel with 3 role-based accounts and one-click sign-in buttons</td>
+              <td>Yes — all 3 accounts shown</td>
+            </tr>
+            <tr>
+              <td><code>VITE_DEMO_MODE=false</code> (default)</td>
+              <td>Standard login form only — no demo panel, no credentials</td>
+              <td>No — completely hidden</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Setting Up Demo Accounts</h3>
+        <p>Before enabling demo mode, ensure the three demo accounts exist in your Supabase Auth:</p>
+        <ol>
+          <li>Create accounts via the Setup Wizard or Supabase dashboard with the emails/passwords above</li>
+          <li>
+            Assign roles via Admin Panel → User Management:
+            <ul>
+              <li><code>user@demo.com</code> — no special role (default user)</li>
+              <li><code>moderator@demo.com</code> — assign <code>moderator</code> role</li>
+              <li><code>admin@demo.com</code> — assign <code>admin</code> role</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="callout danger">
+          <strong>🚨 Security Warning</strong>
+          <strong>Never enable demo mode in production with real user data.</strong> Demo credentials are hardcoded and visible to anyone. Use demo mode only for staging, demos, and testing environments.
+        </div>
+      </section>
+
+      <section class="doc-section" id="storage">
+        <h2>File Storage</h2>
+        <p>All uploads go to dedicated public Supabase Storage buckets. See <a href="#upgrade-storage">Storage Buckets</a> for the full list. Max file sizes:</p>
+        <ul>
+          <li>Profile/post images: 10 MB</li>
+          <li>Chat attachments: 10 MB</li>
+          <li>Stories: 50 MB</li>
+          <li>Reels: 100 MB</li>
+          <li>Post videos: 50 MB</li>
+          <li>Site assets: 5 MB</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="edge-functions">
+        <h2>Backend Functions</h2>
+        <p>11 Deno-based edge functions in <code>supabase/functions/</code>:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Purpose</th>
+              <th>Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>setup-admin</code></td>
+              <td>Creates Super Admin during setup wizard</td>
+              <td>Setup wizard form</td>
+            </tr>
+            <tr>
+              <td><code>translate-post</code></td>
+              <td>AI-powered post translation</td>
+              <td>User click</td>
+            </tr>
+            <tr>
+              <td><code>embed-post</code></td>
+              <td>Generates embeddable HTML</td>
+              <td>Embed modal</td>
+            </tr>
+            <tr>
+              <td><code>tenor-proxy</code></td>
+              <td>Proxies Tenor GIF API</td>
+              <td>GIF picker</td>
+            </tr>
+            <tr>
+              <td><code>fetch-link-preview</code></td>
+              <td>Fetches OpenGraph metadata for link previews</td>
+              <td>Post creation</td>
+            </tr>
+            <tr>
+              <td><code>event-reminders</code></td>
+              <td>Sends event reminder notifications</td>
+              <td>Cron / scheduled</td>
+            </tr>
+            <tr>
+              <td><code>memories-notification</code></td>
+              <td>"On This Day" memories</td>
+              <td>Cron / scheduled</td>
+            </tr>
+            <tr>
+              <td><code>publish-scheduled-posts</code></td>
+              <td>Publishes scheduled posts</td>
+              <td>Cron / scheduled</td>
+            </tr>
+            <tr>
+              <td><code>weekly-event-digest</code></td>
+              <td>Weekly event summary emails</td>
+              <td>Cron / scheduled</td>
+            </tr>
+            <tr>
+              <td><code>detect-fraud-signals</code></td>
+              <td>Marketplace fraud detection</td>
+              <td>On listing create/update</td>
+            </tr>
+            <tr>
+              <td><code>auto-verify-sellers</code></td>
+              <td>Auto-verifies sellers meeting criteria</td>
+              <td>Cron / scheduled</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="rls-security">
+        <h2>Security &amp; RLS</h2>
+        <ul>
+          <li><strong>All 50+ tables have RLS enabled</strong></li>
+          <li>User-scoped data by default</li>
+          <li>Role escalation via <code>has_role()</code> SECURITY DEFINER function</li>
+          <li>Group/page access via <code>is_group_member()</code>, <code>is_page_admin()</code>, <code>is_conversation_member()</code></li>
+          <li>Content moderation via <code>content_reports</code> table</li>
+          <li>User warnings/bans via moderation system</li>
+          <li>Admin has SELECT/UPDATE/DELETE on all platform content</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="realtime">
+        <h2>Realtime</h2>
+        <p>PostgreSQL changes broadcast via Supabase Realtime for: messages, notifications, online presence, typing indicators.</p>
+        <div class="code-block">
+          <div class="code-header"><span>TypeScript</span><button class="copy-btn">Copy</button></div>
+          <pre>
+const channel = supabase
+  .channel('messages')
+  .on('postgres_changes', {
+    event: 'INSERT',
+    schema: 'public',
+    table: 'messages',
+    filter: `conversation_id=eq.${convId}`,
+  }, (payload) => {
+    // Handle new message
+  })
+  .subscribe();</pre
+          >
+        </div>
+      </section>
+
+      <section class="doc-section" id="roles">
+        <h2>User Roles &amp; RBAC</h2>
+        <p>Roles stored in separate <code>user_roles</code> table (enum: <code>admin</code>, <code>moderator</code>, <code>user</code>).</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Access</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>admin</code></td>
+              <td>Full platform — Admin Panel, all settings, user management, credit gifting</td>
+            </tr>
+            <tr>
+              <td><code>moderator</code></td>
+              <td>Moderator Panel — content reports, warnings, bans</td>
+            </tr>
+            <tr>
+              <td><code>user</code></td>
+              <td>Standard — all social features, marketplace, credits, advertising</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ╔══════════════════════════════════════╗
+     ║  SECTION 7: REFERENCE               ║
+     ╚══════════════════════════════════════╝ -->
+
+      <section class="doc-section" id="database-schema">
+        <h2>Database Schema</h2>
+        <p>50+ PostgreSQL tables organized by domain:</p>
+
+        <h4>Core</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Table</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>profiles</code></td>
+              <td>User profile data (auto-created on signup)</td>
+            </tr>
+            <tr>
+              <td><code>user_roles</code></td>
+              <td>RBAC role assignments</td>
+            </tr>
+            <tr>
+              <td><code>friendships</code></td>
+              <td>Friend requests &amp; status</td>
+            </tr>
+            <tr>
+              <td><code>posts</code> / <code>post_likes</code> / <code>comments</code></td>
+              <td>Timeline posts, reactions, threaded comments</td>
+            </tr>
+            <tr>
+              <td><code>conversations</code> / <code>messages</code></td>
+              <td>1:1 and group messaging</td>
+            </tr>
+            <tr>
+              <td><code>notifications</code></td>
+              <td>In-app notifications (social + credits)</td>
+            </tr>
+            <tr>
+              <td><code>site_settings</code></td>
+              <td>Key-value JSONB config store</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Social</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Table</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>groups</code> / <code>group_members</code> / <code>group_posts</code></td>
+              <td>Group system</td>
+            </tr>
+            <tr>
+              <td><code>pages</code> / <code>page_followers</code> / <code>page_posts</code></td>
+              <td>Page system</td>
+            </tr>
+            <tr>
+              <td><code>group_events</code> / <code>group_event_rsvps</code></td>
+              <td>Events with RSVP</td>
+            </tr>
+            <tr>
+              <td><code>reels</code> / <code>reel_likes</code> / <code>reel_comments</code></td>
+              <td>Short-form video</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Marketplace</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Table</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>listings</code></td>
+              <td>Product listings</td>
+            </tr>
+            <tr>
+              <td><code>listing_offers</code></td>
+              <td>Buyer offers</td>
+            </tr>
+            <tr>
+              <td><code>seller_reviews</code> / <code>verified_sellers</code></td>
+              <td>Trust &amp; verification</td>
+            </tr>
+            <tr>
+              <td><code>listing_fraud_signals</code></td>
+              <td>Fraud detection</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Monetization</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Table</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>promotion_credits</code></td>
+              <td>User credit balances</td>
+            </tr>
+            <tr>
+              <td><code>credit_transactions</code></td>
+              <td>Credit movement ledger (spend, topup, gift, admin_gift)</td>
+            </tr>
+            <tr>
+              <td><code>sponsored_posts</code></td>
+              <td>Sponsored ad campaigns with targeting &amp; performance data</td>
+            </tr>
+            <tr>
+              <td><code>promoted_listings</code></td>
+              <td>Boosted marketplace listings</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="api-reference">
+        <h2>API Reference</h2>
+        <p>xBook uses the <strong>Supabase JavaScript SDK</strong> (<code>@supabase/supabase-js</code>) for all data access. No custom REST API — all queries go through the Supabase client with auto-generated TypeScript types.</p>
+        <div class="code-block">
+          <div class="code-header"><span>TypeScript</span><button class="copy-btn">Copy</button></div>
+          <pre>
+import { supabase } from "@/integrations/supabase/client";
+
+// Example: Fetch user's posts
+const { data: posts } = await supabase
+  .from("posts")
+  .select("*")
+  .eq("user_id", userId)
+  .order("created_at", { ascending: false })
+  .limit(20);
+
+// Example: Insert a new notification
+await supabase.from("notifications").insert({
+  user_id: targetUserId,
+  actor_id: currentUserId,
+  type: "credit_gift",
+  message: "sent you 50 credits",
+});</pre
+          >
+        </div>
+        <h3>Key Hooks</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Hook</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>useAuth()</code></td>
+              <td>Current user session &amp; auth state</td>
+            </tr>
+            <tr>
+              <td><code>useCurrentProfile()</code></td>
+              <td>Current user's profile data</td>
+            </tr>
+            <tr>
+              <td><code>useDarkMode()</code></td>
+              <td>Theme toggle state</td>
+            </tr>
+            <tr>
+              <td><code>useSiteBranding()</code></td>
+              <td>Dynamic logos, favicon, site name</td>
+            </tr>
+            <tr>
+              <td><code>useSiteSettings()</code></td>
+              <td>Global site configuration</td>
+            </tr>
+            <tr>
+              <td><code>useMyAds()</code></td>
+              <td>User's sponsored posts with CRUD mutations</td>
+            </tr>
+            <tr>
+              <td><code>useSponsoredPosts()</code></td>
+              <td>Active sponsored posts for feed</td>
+            </tr>
+            <tr>
+              <td><code>useOnlinePresence()</code></td>
+              <td>Real-time online/offline tracking</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="doc-section" id="project-structure">
+        <h2>Project Structure</h2>
+        <div class="code-block">
+          <div class="code-header"><span>Project tree</span></div>
+          <pre>
+xbook/
+├── docs/                    # This documentation
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── public/                  # Static assets
+├── src/
+│   ├── assets/              # Images, logos
+│   ├── components/
+│   │   ├── admin/           # Admin panel components
+│   │   ├── moderator/       # Moderator panel components
+│   │   ├── profile/         # Profile page components
+│   │   ├── sidebar/         # Sidebar sections
+│   │   ├── ui/              # shadcn/ui primitives (50+)
+│   │   ├── watch/           # Watch/video components
+│   │   └── ads/             # Ad display components
+│   ├── constants/           # Category lists, enums
+│   ├── hooks/               # Custom React hooks (25+)
+│   ├── integrations/        # Supabase client &amp; types (auto-generated)
+│   ├── lib/                 # Utilities (deep links, calendar export, ad frequency cap, etc.)
+│   ├── pages/               # Route pages (25+)
+│   ├── index.css            # Tailwind base + design tokens
+│   ├── App.tsx              # Router setup
+│   └── main.tsx             # Entry point
+├── supabase/
+│   ├── config.toml          # Supabase project config
+│   ├── functions/           # Edge functions (11)
+│   └── migrations/          # SQL migrations (chronological)
+├── .env                     # Environment variables (not committed)
+├── tailwind.config.ts       # Tailwind + design tokens
+├── vite.config.ts           # Vite build config
+└── package.json             # Dependencies &amp; scripts</pre
+          >
+        </div>
+      </section>
+
+      <!-- ────── CHANGELOG ────── -->
+      <section class="doc-section" id="changelog">
+        <h2>Changelog</h2>
+
+        <div class="changelog-entry">
+          <div>
+            <span class="version">v1.0.0</span>
+            <span class="date">April 7, 2026 — Initial Release</span>
+          </div>
+          <br />
+
+          <h4>🚀 Core Platform</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Full social networking platform — React 18 + TypeScript 5 + Vite 5 + Tailwind CSS v3</li>
+            <li><span class="tag tag-new">NEW</span> Dark/light theme with system preference detection</li>
+            <li><span class="tag tag-new">NEW</span> Responsive mobile-first design with adaptive sidebar</li>
+            <li><span class="tag tag-new">NEW</span> Global search across all content types</li>
+            <li><span class="tag tag-new">NEW</span> Hashtag discovery and linking</li>
+            <li><span class="tag tag-new">NEW</span> Deep linking across all pages and features</li>
+            <li><span class="tag tag-new">NEW</span> WRAPCODERS branding with teal (#247b7b) design system</li>
+          </ul>
+
+          <h4>🔐 Authentication &amp; Security</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> 7-step registration with photo crop, interests, and friend finder</li>
+            <li><span class="tag tag-new">NEW</span> Google OAuth and Apple Sign-In</li>
+            <li><span class="tag tag-new">NEW</span> Email verification with resend + cooldown</li>
+            <li><span class="tag tag-new">NEW</span> Password reset flow via <code>/reset-password</code></li>
+            <li><span class="tag tag-new">NEW</span> 4-step Setup Wizard with secure admin creation (edge function)</li>
+            <li><span class="tag tag-new">NEW</span> Row-Level Security on all 50+ tables</li>
+            <li><span class="tag tag-new">NEW</span> RBAC: admin, moderator, user roles</li>
+            <li><span class="tag tag-new">NEW</span> Demo/Test mode with 3 role-based accounts via <code>VITE_DEMO_MODE</code></li>
+          </ul>
+
+          <h4>📱 Social Features</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Posts: multi-image carousel, video, backgrounds, feelings, location, privacy</li>
+            <li><span class="tag tag-new">NEW</span> 6 reaction types, threaded comments, sharing, saving, pinning</li>
+            <li><span class="tag tag-new">NEW</span> Post scheduling (calendar + weekly views), edit history</li>
+            <li><span class="tag tag-new">NEW</span> Post embedding, AI translation, link previews</li>
+            <li><span class="tag tag-new">NEW</span> Boost posts with promotion credits</li>
+          </ul>
+
+          <h4>📸 Stories &amp; Reels</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Photo/video stories with 24h expiry and highlights</li>
+            <li><span class="tag tag-new">NEW</span> Short-form reels with likes, comments, creator follows</li>
+          </ul>
+
+          <h4>💬 Messaging</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Real-time 1:1 and group messaging</li>
+            <li><span class="tag tag-new">NEW</span> Attachments, voice messages, reactions, read receipts, typing indicators</li>
+            <li><span class="tag tag-new">NEW</span> Pin, edit, forward messages, GIF + emoji pickers</li>
+          </ul>
+
+          <h4>👥 Groups &amp; Pages</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Public/private groups with posts, chat, events, invites, analytics</li>
+            <li><span class="tag tag-new">NEW</span> Business pages with followers, scheduled posts, multi-admin</li>
+            <li><span class="tag tag-new">NEW</span> Boost pages and page posts with credits</li>
+            <li><span class="tag tag-new">NEW</span> Boost group posts with credits</li>
+          </ul>
+
+          <h4>📅 Events</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> 10 categories, RSVP, recurrence, reminders, calendar/map views</li>
+            <li><span class="tag tag-new">NEW</span> .ics export, weekly digest, related events</li>
+          </ul>
+
+          <h4>🛒 Marketplace</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Listings: 10 categories, offers, seller reviews, verified badges</li>
+            <li><span class="tag tag-new">NEW</span> Fraud detection, price history, credit-based promoted listings</li>
+          </ul>
+
+          <h4>🎬 Watch</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Video platform: 13 categories, playlists, live indicator, comments</li>
+          </ul>
+
+          <h4>💰 Credits &amp; Advertising</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Promotion credits economy: balance, top-up packs, transaction history</li>
+            <li><span class="tag tag-new">NEW</span> Admin credit gifting to any user with custom message</li>
+            <li><span class="tag tag-new">NEW</span> User-to-user credit gifting</li>
+            <li><span class="tag tag-new">NEW</span> Credit notifications: gift received, admin gift, spending confirmation, low balance warning</li>
+            <li><span class="tag tag-new">NEW</span> Advertising hub (<code>/advertising</code>) with Dashboard, My Ads, and Credits tabs</li>
+            <li><span class="tag tag-new">NEW</span> Full CRUD for sponsored posts: create, edit, pause/activate, delete</li>
+            <li><span class="tag tag-new">NEW</span> Ad status filtering: All, Active, Paused, Expired</li>
+            <li><span class="tag tag-new">NEW</span> Per-ad performance stats: impressions, clicks, CTR, credits spent</li>
+            <li><span class="tag tag-new">NEW</span> Audience targeting: category, location, frequency cap</li>
+            <li><span class="tag tag-new">NEW</span> Boost pages, posts, group posts, page posts, and marketplace listings</li>
+            <li><span class="tag tag-new">NEW</span> Interstitial ads with frequency capping (5 navigations, 5-min cooldown)</li>
+            <li><span class="tag tag-new">NEW</span> Admin HTML ad slots: header, sidebar, footer, 3 in-feed positions</li>
+          </ul>
+
+          <h4>🛡️ Admin &amp; Moderation</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> Admin panel with 11 settings categories and platform overview dashboard</li>
+            <li><span class="tag tag-new">NEW</span> CMS editor, site design, custom CSS/JS injection</li>
+            <li><span class="tag tag-new">NEW</span> Content moderation queue, warnings/bans, activity log</li>
+            <li><span class="tag tag-new">NEW</span> User management with role assignment and credit gifting</li>
+            <li><span class="tag tag-new">NEW</span> Verification system for users and sellers</li>
+            <li><span class="tag tag-new">NEW</span> Standardized pagination (15 items/page) across all admin tables</li>
+          </ul>
+
+          <h4>⚙️ Infrastructure</h4>
+          <ul>
+            <li><span class="tag tag-new">NEW</span> 11 edge functions, 10 storage buckets</li>
+            <li><span class="tag tag-new">NEW</span> Realtime subscriptions for messages and presence</li>
+            <li><span class="tag tag-new">NEW</span> Online presence tracking, site settings JSONB store</li>
+            <li><span class="tag tag-new">NEW</span> Dynamic branding via <code>useSiteBranding</code> hook</li>
+            <li><span class="tag tag-new">NEW</span> Demo mode with 3 role-based accounts (User, Moderator, Admin)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ────── TROUBLESHOOTING ────── -->
+      <section class="doc-section" id="troubleshooting">
+        <h2>Troubleshooting</h2>
+
+        <h4>App redirects to /setup repeatedly</h4>
+        <p>The <code>user_roles</code> table is empty or its RLS policy blocks reads. Ensure at least one admin row exists.</p>
+
+        <h4>Setup wizard fails to create admin</h4>
+        <p>The <code>setup-admin</code> edge function requires <code>SUPABASE_SERVICE_ROLE_KEY</code> as a secret. Verify it's set in your backend secrets.</p>
+
+        <h4>Images/logos not loading</h4>
+        <p>Check that the <code>site-assets</code> bucket exists and is public. Verify URLs in <code>site_settings</code> → <code>admin_design</code>.</p>
+
+        <h4>Realtime not working</h4>
+        <p>Verify tables are added to the realtime publication: <code>ALTER PUBLICATION supabase_realtime ADD TABLE messages;</code></p>
+
+        <h4>RLS permission denied</h4>
+        <p>User may not be authenticated or lacks the required role. Check policies with <code>has_role()</code>.</p>
+
+        <h4>Build fails with TypeScript errors</h4>
+        <div class="code-block">
+          <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
+          <pre>
+npx tsc --noEmit           # See exact errors
+rm -rf node_modules/.vite  # Clear Vite cache
+bun install && bun run build</pre
+          >
+        </div>
+
+        <h4>Demo login not appearing</h4>
+        <p>Verify <code>VITE_DEMO_MODE=true</code> is in your <code>.env</code> (not <code>DEMO_MODE</code>). Restart the dev server after changing env vars. Ensure the demo accounts exist in Auth.</p>
+
+        <h4>Edge function returns 404</h4>
+        <p>The function may not be deployed. Run <code>supabase functions deploy function-name</code> or redeploy via your WRAPCODERS Cloud project.</p>
+
+        <h4>Credits not deducting / balance unchanged</h4>
+        <p>Verify the user has a row in <code>promotion_credits</code>. If not, insert one with <code>balance: 0</code>. Check RLS policies allow the user to update their own credit balance.</p>
+
+        <h4>Sponsored post not appearing in feed</h4>
+        <p>Check that <code>is_active = true</code>, <code>start_date</code> ≤ now, and <code>end_date</code> ≥ now. Also verify frequency cap hasn't been exceeded for the viewing user.</p>
+      </section>
+
+      <!-- ────── FAQ ────── -->
+      <section class="doc-section" id="faq">
+        <h2>FAQ</h2>
+
+        <h4>How do I update to a new version?</h4>
+        <p>Follow the <a href="#upgrade-overview">Upgrade &amp; Migrate</a> guide. In short: pull code → install deps → apply migrations → deploy edge functions → build → deploy frontend.</p>
+
+        <h4>Can I use my own Supabase project?</h4>
+        <p>Yes. Set your Supabase URL and keys in <code>.env</code>, apply all migrations from <code>supabase/migrations/</code>, create the storage buckets, and deploy edge functions.</p>
+
+        <h4>How do I add a new admin?</h4>
+        <p>An existing admin can assign the admin role via Admin Panel → User Management → click a user → change role to admin.</p>
+
+        <h4>Is the app mobile-ready?</h4>
+        <p>Yes. xBook is fully responsive with a mobile-first design, adaptive sidebar, touch gestures, and swipeable notifications.</p>
+
+        <h4>Can I customize the branding?</h4>
+        <p>Yes. Go to Admin Panel → Site Design to upload logos, favicon, and set theme colors. Custom CSS/JS can also be injected.</p>
+
+        <h4>How do I enable/disable features?</h4>
+        <p>Admin Panel → Settings → Features tab. Toggle individual platform features on/off.</p>
+
+        <h4>Where is user data stored?</h4>
+        <p>PostgreSQL database via Supabase. Files in Supabase Storage buckets. All data is protected by Row-Level Security policies.</p>
+
+        <h4>How do I give users credits?</h4>
+        <p>Admins can gift credits from Admin Panel → User Management → select user → Gift Credits. Users can also buy credit packs from <code>/credits</code> or receive gifts from other users.</p>
+
+        <h4>How do I manage ads as an admin?</h4>
+        <p>Admin Panel → Advertisements lets you manage 6 HTML ad slots (header, sidebar, footer, 3 in-feed). Users self-manage sponsored posts from <code>/advertising</code>.</p>
+
+        <h4>How does demo mode work?</h4>
+        <p>Set <code>VITE_DEMO_MODE=true</code> in <code>.env</code> to show a quick login panel with 3 pre-configured accounts (User, Moderator, Admin). Remove or set to <code>false</code> for production. See <a href="#demo-mode">Demo Mode</a>.</p>
+      </section>
+
+      <!-- ────── CREDITS ────── -->
+      <section class="doc-section" id="credits">
+        <h2>Credits</h2>
+        <p>
+          xBook is designed and developed by <a href="https://wrapcoders.com/" target="_blank"><strong>WRAPCODERS</strong></a
+          >.
+        </p>
+        <h3>Technology Stack</h3>
+        <ul>
+          <li><strong>Frontend:</strong> React 18, TypeScript 5, Vite 5, Tailwind CSS v3</li>
+          <li><strong>UI:</strong> shadcn/ui (Radix UI), Lucide icons</li>
+          <li><strong>State:</strong> TanStack React Query</li>
+          <li><strong>Routing:</strong> React Router v6</li>
+          <li><strong>Backend:</strong> Supabase (PostgreSQL, Auth, Storage, Edge Functions, Realtime)</li>
+          <li><strong>Maps:</strong> Leaflet with marker clustering</li>
+          <li><strong>Charts:</strong> Recharts</li>
+        </ul>
+        <p style="margin-top: 24px; font-size: 13px; color: var(--wc-text-muted)">&copy; 2026 <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>. All rights reserved.</p>
+      </section>
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="doc-footer">
+      <p>&copy; 2026 <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a> — xBook Documentation v1.0.0</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
