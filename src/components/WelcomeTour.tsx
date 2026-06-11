@@ -28,7 +28,7 @@ interface TourStep {
 const tourSteps: TourStep[] = [
   {
     icon: Sparkles,
-    title: "Welcome to xBook!",
+    title: "Welcome to ZenBook!",
     description: "Your new social space to connect, share, and discover. Let us show you around — it only takes a minute!",
     color: "text-primary",
     bgGradient: "from-primary/20 to-primary/5",

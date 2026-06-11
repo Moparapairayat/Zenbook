@@ -424,7 +424,7 @@ const Auth = () => {
         <div className="relative z-10 max-w-md w-full space-y-8">
           {/* Logo & Heading */}
           <div className="text-center space-y-4">
-            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="xBook" className="h-14 mx-auto" />
+            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-14 mx-auto" />
             <h2 className={cn("text-3xl font-bold tracking-tight", isDark ? "text-white" : "text-slate-800")}>
               Connect with your world
             </h2>
@@ -477,7 +477,7 @@ const Auth = () => {
             isDark ? "bg-white/5 border-white/10" : "bg-white/60 border-white/80 shadow-sm"
           )}>
             <p className={cn("text-sm italic leading-relaxed", isDark ? "text-white/70" : "text-slate-600")}>
-              "xBook has completely changed how I stay connected with my community. The events and groups features are incredible!"
+              "ZenBook has completely changed how I stay connected with my community. The events and groups features are incredible!"
             </p>
             <div className={cn("text-xs mt-3 font-medium", isDark ? "text-white/40" : "text-slate-400")}>
               — Sarah K., Community Manager
@@ -506,7 +506,7 @@ const Auth = () => {
         <div className="w-full max-w-[420px]">
           {/* Logo (mobile only) */}
           <div className="text-center mb-8 lg:hidden">
-            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="xBook" className="h-14 mx-auto mb-3" />
+            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-14 mx-auto mb-3" />
             <p className="text-muted-foreground text-base">
               Connect with friends and the world around you.
             </p>
@@ -527,7 +527,7 @@ const Auth = () => {
                 </p>
                 <p className="text-sm font-semibold text-foreground">{signupEmail}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Click the link in your email to verify your account and start using xBook.
+                  Click the link in your email to verify your account and start using ZenBook.
                 </p>
               </div>
 
@@ -628,7 +628,7 @@ const Auth = () => {
             </h1>
             <p className="text-sm text-muted-foreground mt-1">
               {isLogin
-                ? "Log in to continue to xBook"
+                ? "Log in to continue to ZenBook"
                 : step === 1 ? `Step 1 of ${TOTAL_STEPS} — Account details`
                 : step === 2 ? `Step 2 of ${TOTAL_STEPS} — Tell us about yourself`
                 : step === 3 ? `Step 3 of ${TOTAL_STEPS} — Add a profile photo`

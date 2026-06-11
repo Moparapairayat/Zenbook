@@ -1,8 +1,8 @@
 {
-  "name": "xbook",
+  "name": "zenbook",
   "version": "1.0.0",
-  "homepage": "https://xbook.wrapcoders.com/",
-  "description": "xBook — Social Network Platform with Marketplace, Groups, Events & Real-Time Messaging",
+  "homepage": "https://zenbook.wrapcoders.com/",
+  "description": "ZenBook — Social Network Platform with Marketplace, Groups, Events & Real-Time Messaging",
   "author": "WRAPCODERS",
   "type": "module",
   "private": true,

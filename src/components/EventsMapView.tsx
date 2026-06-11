@@ -57,7 +57,7 @@ async function geocodeLocation(location: string): Promise<{ lat: number; lng: nu
   try {
     const res = await fetch(
       `${NOMINATIM_URL}?q=${encodeURIComponent(location)}&format=json&limit=1`,
-      { headers: { "User-Agent": "xBook-Events/1.0" } }
+      { headers: { "User-Agent": "ZenBook-Events/1.0" } }
     );
     const data = await res.json();
     if (data && data.length > 0) {

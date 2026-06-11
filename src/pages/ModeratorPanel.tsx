@@ -179,7 +179,7 @@ const ModeratorPanel = () => {
         >
           {/* Sidebar header */}
           <div className="h-14 flex items-center gap-3 px-4 border-b border-border shrink-0">
-            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="xBook" className="h-7" />
+            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-7" />
             <span className="font-bold text-foreground text-lg">Moderator</span>
             <button className="ml-auto lg:hidden" onClick={() => setSidebarOpen(false)}>
               <X className="w-5 h-5 text-muted-foreground" />

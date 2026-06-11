@@ -276,7 +276,7 @@ const AdminDesign = () => {
             className="rounded-lg p-3 mb-4 flex items-center gap-3"
             style={{ backgroundColor: headerBgColor }}
           >
-            <div className="text-sm font-bold" style={{ color: headerTextColor }}>xBook</div>
+            <div className="text-sm font-bold" style={{ color: headerTextColor }}>ZenBook</div>
             <div
               className="flex-1 max-w-[200px] h-8 rounded-full px-3 flex items-center"
               style={{ backgroundColor: headerSearchBgColor }}

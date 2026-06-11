@@ -33,7 +33,7 @@ const PWAInstallPrompt = () => {
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-xl border bg-card px-4 py-3 shadow-lg animate-in slide-in-from-bottom-4">
       <Download className="h-5 w-5 text-primary shrink-0" />
-      <span className="text-sm font-medium text-foreground">Install xBook for the best experience</span>
+      <span className="text-sm font-medium text-foreground">Install ZenBook for the best experience</span>
       <Button size="sm" onClick={handleInstall}>
         Install
       </Button>

@@ -246,7 +246,7 @@ const ActivityLog = () => {
             <p className="text-muted-foreground text-lg font-medium">No activity found</p>
             <p className="text-sm text-muted-foreground mt-1">
               {filter === "all"
-                ? "Your activity will appear here as you use xBook"
+                ? "Your activity will appear here as you use ZenBook"
                 : `No ${filter} activity yet`}
             </p>
           </CardContent>

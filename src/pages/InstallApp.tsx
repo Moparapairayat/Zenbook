@@ -33,7 +33,7 @@ function detectIOSBrowser(): IOSBrowser {
 }
 
 const InstallApp = () => {
-  const siteName = "xBook";
+  const siteName = "ZenBook";
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [installing, setInstalling] = useState(false);

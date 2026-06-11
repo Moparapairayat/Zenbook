@@ -19,7 +19,7 @@ export function generateICSFile(event: CalendarEvent): string {
   const start = formatICSDate(event.startDate);
   const end = formatICSDate(event.endDate || new Date(event.startDate.getTime() + 60 * 60 * 1000));
 
-  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//xBook//Events//EN", "BEGIN:VEVENT", `DTSTART:${start}`, `DTEND:${end}`, `SUMMARY:${event.title}`];
+  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ZenBook//Events//EN", "BEGIN:VEVENT", `DTSTART:${start}`, `DTEND:${end}`, `SUMMARY:${event.title}`];
 
   if (event.description) lines.push(`DESCRIPTION:${event.description.replace(/\n/g, "\\n")}`);
   if (event.location) lines.push(`LOCATION:${event.location}`);

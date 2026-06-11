@@ -83,7 +83,7 @@ function renderPostHtml(post: { id: string; content: string; image_url: string |
   const borderColor = isDark ? "#2d2d4a" : "#e5e7eb";
   const brandColor = "#3b82f6";
 
-  const displayName = escapeHtml(profile?.display_name || "xBook User");
+  const displayName = escapeHtml(profile?.display_name || "ZenBook User");
   const avatarUrl = profile?.avatar_url || "";
   const contentText = escapeHtml(post.content);
   const imageUrl = post.image_url || (post.image_urls && post.image_urls.length > 0 ? post.image_urls[0] : null);
@@ -132,9 +132,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Ar
   <div class="footer">
     <span class="brand">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      xBook
+      ZenBook
     </span>
-    <a class="view-link" href="/?post=${post.id}" target="_blank" rel="noopener">View on xBook →</a>
+    <a class="view-link" href="/?post=${post.id}" target="_blank" rel="noopener">View on ZenBook →</a>
   </div>
 </div>
 </body>

@@ -687,7 +687,7 @@ const Setup = () => {
           Step {step} of {TOTAL_STEPS} • Setup Wizard
         </p>
         <p className="text-[10px] text-muted-foreground/60">
-          Powered by <a href="https://wrapcoders.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WRAPCODERS</a>
+          Powered by MOPARA PAIR AYAT
         </p>
       </div>
     </div>

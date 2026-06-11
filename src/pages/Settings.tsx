@@ -164,7 +164,7 @@ const Settings = () => {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Online Status</Label>
-                  <p className="text-sm text-muted-foreground">Show when you're active on xBook</p>
+                  <p className="text-sm text-muted-foreground">Show when you're active on ZenBook</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -193,7 +193,7 @@ const Settings = () => {
           <Card>
             <CardHeader>
               <CardTitle>Appearance</CardTitle>
-              <CardDescription>Customize the look and feel of xBook</CardDescription>
+              <CardDescription>Customize the look and feel of ZenBook</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-center justify-between">
@@ -234,7 +234,7 @@ const Settings = () => {
           <Card>
             <CardHeader>
               <CardTitle>Help & Support</CardTitle>
-              <CardDescription>Get help with using xBook</CardDescription>
+              <CardDescription>Get help with using ZenBook</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <Button variant="outline" className="w-full justify-start gap-2" onClick={() => navigate("/safety")}>

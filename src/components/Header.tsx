@@ -113,7 +113,7 @@ const Header = () => {
         <button onClick={() => navigate("/")} className="h-10 flex items-center justify-center flex-shrink-0">
           <img
             src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)}
-            alt="xBook"
+            alt="ZenBook"
             className="h-9"
           />
         </button>

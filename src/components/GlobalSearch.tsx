@@ -152,7 +152,7 @@ const GlobalSearch = () => {
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         <input
           type="text"
-          placeholder="Search xBook"
+          placeholder="Search ZenBook"
           className="bg-secondary rounded-full pl-10 pr-4 py-2 text-sm w-full outline-none placeholder:text-muted-foreground cursor-pointer"
           readOnly
           value={open ? "" : ""}

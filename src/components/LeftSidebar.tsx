@@ -162,7 +162,7 @@ const LeftSidebar = () => {
               {" · "}
               <span className="cursor-pointer hover:underline" onClick={() => handleNavigate("/page/cookies")}>Cookies</span>
               {" · "}
-              <span>xBook © {new Date().getFullYear()}</span>
+              <span>ZenBook © {new Date().getFullYear()}</span>
             </div>
           )}
         </div>
