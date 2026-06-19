@@ -80,7 +80,7 @@ Deno.serve(async (req) => {
     await supabase.from("site_settings").upsert(
       {
         setting_key: "admin_website_info",
-        setting_value: { siteName: "WRAPCODERS", siteDescription: "A connected social experience.", siteUrl: "" },
+        setting_value: { siteName: "ZenBook", siteDescription: "A connected social experience.", siteUrl: "" },
         updated_at: new Date().toISOString(),
         updated_by: adminId,
       },

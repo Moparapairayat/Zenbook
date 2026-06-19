@@ -1,5 +1,5 @@
-import xbookLogoDark from "@/assets/xbook-logo-dark-2.png";
-import xbookLogoLight from "@/assets/xbook-logo-light-2.png";
+import zenbookLogoDark from "@/assets/zenbook-logo-dark.png";
+import zenbookLogoLight from "@/assets/zenbook-logo-light.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -81,7 +81,7 @@ const ResetPassword = () => {
     <div className="min-h-screen bg-background flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-[420px]">
         <div className="text-center mb-8">
-          <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-14 mx-auto mb-3" />
+          <img src={isDark ? (branding.darkLogoUrl || zenbookLogoLight) : (branding.logoUrl || zenbookLogoDark)} alt="ZenBook" className="h-14 mx-auto mb-3" />
         </div>
 
         <div className="bg-card rounded-xl shadow-lg border border-border p-6 space-y-5">

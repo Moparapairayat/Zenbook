@@ -1,6 +1,6 @@
 import defaultAvatar from "@/assets/default-avatar.jpg";
-import xbookLogoDark from "@/assets/xbook-logo-dark-2.png";
-import xbookLogoLight from "@/assets/xbook-logo-light-2.png";
+import zenbookLogoDark from "@/assets/zenbook-logo-dark.png";
+import zenbookLogoLight from "@/assets/zenbook-logo-light.png";
 import GlobalSearch from "@/components/GlobalSearch";
 import InstallAppCTA from "@/components/InstallAppCTA";
 import NotificationsDropdown from "@/components/NotificationsDropdown";
@@ -112,7 +112,7 @@ const Header = () => {
         </button>
         <button onClick={() => navigate("/")} className="h-10 flex items-center justify-center flex-shrink-0">
           <img
-            src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)}
+            src={isDark ? (branding.darkLogoUrl || zenbookLogoLight) : (branding.logoUrl || zenbookLogoDark)}
             alt="ZenBook"
             className="h-9"
           />

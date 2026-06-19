@@ -15,8 +15,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import xbookLogoDark from "@/assets/xbook-logo-dark-2.png";
-import xbookLogoLight from "@/assets/xbook-logo-light-2.png";
+import zenbookLogoDark from "@/assets/zenbook-logo-dark.png";
+import zenbookLogoLight from "@/assets/zenbook-logo-light.png";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { useSiteBranding } from "@/hooks/useSiteBranding";
 import defaultAvatar from "@/assets/default-avatar.jpg";
@@ -424,7 +424,7 @@ const Auth = () => {
         <div className="relative z-10 max-w-md w-full space-y-8">
           {/* Logo & Heading */}
           <div className="text-center space-y-4">
-            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-14 mx-auto" />
+            <img src={isDark ? (branding.darkLogoUrl || zenbookLogoLight) : (branding.logoUrl || zenbookLogoDark)} alt="ZenBook" className="h-14 mx-auto" />
             <h2 className={cn("text-3xl font-bold tracking-tight", isDark ? "text-white" : "text-slate-800")}>
               Connect with your world
             </h2>
@@ -506,7 +506,7 @@ const Auth = () => {
         <div className="w-full max-w-[420px]">
           {/* Logo (mobile only) */}
           <div className="text-center mb-8 lg:hidden">
-            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-14 mx-auto mb-3" />
+            <img src={isDark ? (branding.darkLogoUrl || zenbookLogoLight) : (branding.logoUrl || zenbookLogoDark)} alt="ZenBook" className="h-14 mx-auto mb-3" />
             <p className="text-muted-foreground text-base">
               Connect with friends and the world around you.
             </p>

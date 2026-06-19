@@ -271,8 +271,8 @@
             <div class="code-block">
               <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
               <pre>
-git clone https://github.com/your-org/xbook.git
-cd xbook</pre
+git clone https://github.com/your-org/zenbook.git
+cd zenbook</pre
               >
             </div>
           </li>
@@ -617,7 +617,7 @@ dist/
 server {
     listen 80;
     server_name yourdomain.com;
-    root /var/www/xbook/dist;
+    root /var/www/zenbook/dist;
     index index.html;
 
     # SPA fallback — critical for client-side routing
@@ -662,8 +662,8 @@ CMD ["nginx", "-g", "daemon off;"]</pre
         <div class="code-block">
           <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
           <pre>
-docker build -t xbook .
-docker run -p 80:80 xbook</pre
+docker build -t zenbook .
+docker run -p 80:80 zenbook</pre
           >
         </div>
 
@@ -721,7 +721,7 @@ docker run -p 80:80 xbook</pre
             <div class="code-block">
               <div class="code-header"><span>Terminal</span><button class="copy-btn">Copy</button></div>
               <pre>
-cd xbook
+cd zenbook
 git pull origin main
 
 # If using ZIP download: extract new version
@@ -2096,7 +2096,7 @@ await supabase.from("notifications").insert({
         <div class="code-block">
           <div class="code-header"><span>Project tree</span></div>
           <pre>
-xbook/
+zenbook/
 ├── docs/                    # This documentation
 │   ├── index.html
 │   ├── style.css

@@ -274,7 +274,7 @@ const Index = () => {
   const [showTour, setShowTour] = useState(false);
   useEffect(() => {
     if (!user) return;
-    const tourKey = `xbook_tour_completed_${user.id}`;
+    const tourKey = `zenbook_tour_completed_${user.id}`;
     if (!localStorage.getItem(tourKey)) {
       // Check if account was created recently (within last 5 minutes)
       const createdAt = new Date(user.created_at || "");
@@ -290,7 +290,7 @@ const Index = () => {
 
   const handleTourComplete = () => {
     if (user) {
-      localStorage.setItem(`xbook_tour_completed_${user.id}`, "true");
+      localStorage.setItem(`zenbook_tour_completed_${user.id}`, "true");
     }
     setShowTour(false);
   };

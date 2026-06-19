@@ -1,5 +1,5 @@
-import xbookLogoDark from "@/assets/xbook-logo-dark-2.png";
-import xbookLogoLight from "@/assets/xbook-logo-light-2.png";
+import zenbookLogoDark from "@/assets/zenbook-logo-dark.png";
+import zenbookLogoLight from "@/assets/zenbook-logo-light.png";
 import { useAuth } from "@/hooks/useAuth";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { useSiteBranding } from "@/hooks/useSiteBranding";
@@ -374,7 +374,7 @@ const Moderation = () => {
         >
           {/* Sidebar header */}
           <div className="h-14 flex items-center gap-3 px-4 border-b border-border shrink-0">
-            <img src={isDark ? (branding.darkLogoUrl || xbookLogoLight) : (branding.logoUrl || xbookLogoDark)} alt="ZenBook" className="h-7" />
+            <img src={isDark ? (branding.darkLogoUrl || zenbookLogoLight) : (branding.logoUrl || zenbookLogoDark)} alt="ZenBook" className="h-7" />
             <span className="font-bold text-foreground text-lg">Admin Panel</span>
             <button className="ml-auto lg:hidden" onClick={() => setSidebarOpen(false)}>
               <X className="w-5 h-5 text-muted-foreground" />
