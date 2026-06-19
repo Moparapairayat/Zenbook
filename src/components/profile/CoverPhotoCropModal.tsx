@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Cropper, { Area } from "react-easy-crop";
 import { X, Check, ZoomIn, ZoomOut, RotateCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -65,16 +66,18 @@ const CoverPhotoCropModal = ({ imageSrc, onCropComplete, onCancel }: CoverPhotoC
     }
   };
 
-  return (
-    <div className="fixed inset-0 z-50 bg-black/90 flex flex-col">
+  const saveDisabled = saving || !croppedAreaPixels;
+
+  return createPortal(
+    <div className="fixed inset-0 z-[1000] bg-black/90 flex flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-black/60 backdrop-blur-sm z-10">
+      <div className="shrink-0 flex items-center justify-between px-4 py-3 bg-black/70 backdrop-blur-sm z-10">
         <Button variant="ghost" size="sm" onClick={onCancel} className="text-white/80 hover:text-white hover:bg-white/10">
           <X className="w-5 h-5" />
           Cancel
         </Button>
         <h3 className="text-white font-semibold text-sm">Crop Cover Photo</h3>
-        <Button size="sm" onClick={handleSave} disabled={saving}>
+        <Button size="sm" onClick={handleSave} disabled={saveDisabled}>
           <Check className="w-4 h-4" />
           {saving ? "Saving..." : "Save"}
         </Button>
@@ -99,29 +102,44 @@ const CoverPhotoCropModal = ({ imageSrc, onCropComplete, onCancel }: CoverPhotoC
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-6 px-4 py-3 bg-black/60 backdrop-blur-sm">
-        <div className="flex items-center gap-3">
-          <ZoomOut className="w-4 h-4 text-white/60" />
-          <input
-            type="range"
-            min={1}
-            max={3}
-            step={0.05}
-            value={zoom}
-            onChange={(e) => setZoom(Number(e.target.value))}
-            className="w-32 sm:w-48 accent-primary"
-          />
-          <ZoomIn className="w-4 h-4 text-white/60" />
+      <div className="shrink-0 px-4 py-3 bg-black/75 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-4xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center justify-center gap-5">
+            <div className="flex items-center gap-3">
+              <ZoomOut className="w-4 h-4 text-white/60" />
+              <input
+                type="range"
+                min={1}
+                max={3}
+                step={0.05}
+                value={zoom}
+                onChange={(e) => setZoom(Number(e.target.value))}
+                className="w-36 sm:w-48 accent-primary"
+              />
+              <ZoomIn className="w-4 h-4 text-white/60" />
+            </div>
+            <button
+              onClick={() => setRotation((r) => (r + 90) % 360)}
+              className="flex h-9 items-center gap-1.5 rounded-lg border border-white/20 px-3 text-xs text-white/80 transition-colors hover:text-white"
+            >
+              <RotateCw className="w-3.5 h-3.5" />
+              Rotate
+            </button>
+          </div>
+
+          <div className="flex items-center justify-end gap-2">
+            <Button variant="ghost" size="sm" onClick={onCancel} className="text-white/80 hover:text-white hover:bg-white/10">
+              Cancel
+            </Button>
+            <Button size="sm" onClick={handleSave} disabled={saveDisabled} className="min-w-[128px]">
+              <Check className="w-4 h-4" />
+              {saving ? "Saving..." : "Save Cover"}
+            </Button>
+          </div>
         </div>
-        <button
-          onClick={() => setRotation((r) => (r + 90) % 360)}
-          className="flex items-center gap-1.5 text-white/70 hover:text-white text-xs px-3 py-1.5 rounded-lg border border-white/20 transition-colors"
-        >
-          <RotateCw className="w-3.5 h-3.5" />
-          Rotate
-        </button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
