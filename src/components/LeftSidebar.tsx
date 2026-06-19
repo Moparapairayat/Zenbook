@@ -58,6 +58,7 @@ const LeftSidebar = () => {
   const renderButton = (icon: React.ReactNode, label: string, onClick: () => void, extraClass?: string, isActive?: boolean) => {
     const btn = (
       <button
+        key={label}
         onClick={onClick}
         className={`flex items-center gap-3 w-full p-2 rounded-lg transition-colors text-left ${collapsed && !mobileOpen ? "justify-center" : ""} ${isActive ? "bg-primary/10 text-primary" : "hover:bg-secondary"} ${extraClass || ""}`}
       >
