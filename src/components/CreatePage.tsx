@@ -81,8 +81,8 @@ const CreatePage = ({ open, onClose }: CreatePageProps) => {
             .eq("id", newPage.id);
           if (updateError) throw updateError;
         }
-      } catch (imageError: any) {
-        toast.warning(imageError.message || "Page created, but image upload failed");
+      } catch (imageError) {
+        toast.warning(imageError instanceof Error ? imageError.message : "Page created, but image upload failed");
       }
 
       // Auto-follow the page so posts appear in the creator's feed

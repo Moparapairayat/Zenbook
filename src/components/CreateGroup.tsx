@@ -171,8 +171,8 @@ const CreateGroup = ({ open, onClose }: CreateGroupProps) => {
             .eq("id", group.id);
           if (imageUpdateError) throw imageUpdateError;
         }
-      } catch (imageError: any) {
-        toast.warning(imageError.message || "Group created, but image upload failed");
+      } catch (imageError) {
+        toast.warning(imageError instanceof Error ? imageError.message : "Group created, but image upload failed");
       }
 
       // Invite selected friends
