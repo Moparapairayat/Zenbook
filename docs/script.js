@@ -1,4 +1,4 @@
-// ─── WRAPCODERS Documentation Scripts ─── //
+// ─── MPA Documentation Scripts ─── //
 
 document.addEventListener('DOMContentLoaded', () => {
   // Sidebar toggle (mobile)

@@ -687,7 +687,7 @@ const Setup = () => {
           Step {step} of {TOTAL_STEPS} • Setup Wizard
         </p>
         <p className="text-[10px] text-muted-foreground/60">
-          Powered by MOPARA PAIR AYAT
+          Powered by MPA
         </p>
       </div>
     </div>

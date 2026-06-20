@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZenBook Documentation — v1.0.0 | WRAPCODERS</title>
-    <meta name="description" content="Complete documentation for ZenBook social platform by WRAPCODERS. Setup, deployment, upgrade, features, and API reference." />
+    <title>ZenBook Documentation — v1.0.0 | MPA</title>
+    <meta name="description" content="Complete documentation for ZenBook social platform by MPA. Setup, deployment, upgrade, features, and API reference." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -31,7 +31,7 @@
         <input type="text" placeholder="Search docs… (Ctrl+K)" />
       </div>
       <div class="header-links">
-        <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>
+        MPA
         <a href="#changelog">Changelog</a>
       </div>
     </header>
@@ -160,7 +160,7 @@
       <!-- ────── INTRODUCTION ────── -->
       <section class="doc-section" id="introduction">
         <h2>Introduction</h2>
-        <p><strong>ZenBook</strong> is a production-ready, full-stack social networking platform built with <strong>React 18</strong>, <strong>TypeScript 5</strong>, <strong>Vite 5</strong>, <strong>Tailwind CSS v3</strong>, and powered by <strong>Supabase</strong> (PostgreSQL, Auth, Storage, Edge Functions, Realtime). Designed and maintained by <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>.</p>
+        <p><strong>ZenBook</strong> is a production-ready, full-stack social networking platform built with <strong>React 18</strong>, <strong>TypeScript 5</strong>, <strong>Vite 5</strong>, <strong>Tailwind CSS v3</strong>, and powered by <strong>Supabase</strong> (PostgreSQL, Auth, Storage, Edge Functions, Realtime). Designed and maintained by MPA.</p>
         <div class="feature-grid">
           <div class="feature-card">
             <div class="icon">👥</div>
@@ -200,8 +200,8 @@
         </div>
 
         <div class="callout success">
-          <strong>🏢 Built by WRAPCODERS</strong>
-          ZenBook is designed, developed, and maintained by <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>. For support, custom development, or licensing inquiries, visit our website.
+          <strong>🏢 Built by MPA</strong>
+          ZenBook is designed, developed, and maintained by MPA. For support, custom development, or licensing inquiries, visit our website.
         </div>
       </section>
 
@@ -308,8 +308,8 @@ supabase db push</pre
               >
             </div>
             <div class="callout info">
-              <strong>ℹ️ WRAPCODERS Cloud Users</strong>
-              If you built this project on the WRAPCODERS platform, migrations are applied automatically. Skip this step.
+              <strong>ℹ️ MPA Cloud Users</strong>
+              If you built this project on the MPA platform, migrations are applied automatically. Skip this step.
             </div>
           </li>
           <li>
@@ -390,7 +390,7 @@ supabase db push</pre
         </table>
 
         <h3>Backend Secrets (Supabase Edge Functions)</h3>
-        <p>These are set in your Supabase project dashboard (or WRAPCODERS Cloud → Secrets), <strong>not</strong> in <code>.env</code>:</p>
+        <p>These are set in your Supabase project dashboard (or MPA Cloud → Secrets), <strong>not</strong> in <code>.env</code>:</p>
         <table class="doc-table">
           <thead>
             <tr>
@@ -405,7 +405,7 @@ supabase db push</pre
             </tr>
             <tr>
               <td><code>LOVABLE_API_KEY</code></td>
-              <td>AI features (translation, etc.) — auto-set on WRAPCODERS Cloud</td>
+              <td>AI features (translation, etc.) — auto-set on MPA Cloud</td>
             </tr>
           </tbody>
         </table>
@@ -572,7 +572,7 @@ dist/
           </thead>
           <tbody>
             <tr>
-              <td><strong>WRAPCODERS Cloud</strong></td>
+              <td><strong>MPA Cloud</strong></td>
               <td>One-click publish</td>
               <td>Auto-handles builds, deploys, backend, and edge functions</td>
             </tr>
@@ -711,7 +711,7 @@ docker run -p 80:80 zenbook</pre
 
       <section class="doc-section" id="upgrade-frontend">
         <h2>Frontend Update</h2>
-        <h3>For WRAPCODERS Cloud Projects</h3>
+        <h3>For MPA Cloud Projects</h3>
         <p>Frontend updates are automatic when you click <strong>Publish → Update</strong>. No manual steps needed.</p>
 
         <h3>For Self-Hosted / GitHub-Synced Projects</h3>
@@ -765,7 +765,7 @@ bun run preview    # Preview locally</pre
         <h2>Database &amp; Backend Update</h2>
         <p>Each release may include new SQL migrations in <code>supabase/migrations/</code>.</p>
 
-        <h3>For WRAPCODERS Cloud Projects</h3>
+        <h3>For MPA Cloud Projects</h3>
         <p>Database migrations are applied <strong>automatically</strong>. No manual steps needed.</p>
 
         <h3>For Self-Hosted Supabase</h3>
@@ -816,7 +816,7 @@ SELECT tablename, rowsecurity FROM pg_tables WHERE schemaname = 'public' AND row
 
       <section class="doc-section" id="upgrade-edge-functions">
         <h2>Edge Functions Update</h2>
-        <h3>For WRAPCODERS Cloud</h3>
+        <h3>For MPA Cloud</h3>
         <p>Edge functions deploy <strong>automatically</strong> when code is changed. No action needed.</p>
 
         <h3>For Self-Hosted Supabase</h3>
@@ -1034,7 +1034,7 @@ bun install && bun run build</pre
           <pre>psql "postgresql://postgres:PASSWORD@db.REF.supabase.co:5432/postgres" < backup.sql</pre>
         </div>
 
-        <h3>WRAPCODERS Cloud Projects</h3>
+        <h3>MPA Cloud Projects</h3>
         <p>Use the built-in <strong>History</strong> feature to restore to a previous version. Click the clock icon in the editor to browse and restore past states.</p>
       </section>
 
@@ -2151,7 +2151,7 @@ zenbook/
             <li><span class="tag tag-new">NEW</span> Global search across all content types</li>
             <li><span class="tag tag-new">NEW</span> Hashtag discovery and linking</li>
             <li><span class="tag tag-new">NEW</span> Deep linking across all pages and features</li>
-            <li><span class="tag tag-new">NEW</span> WRAPCODERS branding with teal (#247b7b) design system</li>
+            <li><span class="tag tag-new">NEW</span> MPA branding with teal (#247b7b) design system</li>
           </ul>
 
           <h4>🔐 Authentication &amp; Security</h4>
@@ -2283,7 +2283,7 @@ bun install && bun run build</pre
         <p>Verify <code>VITE_DEMO_MODE=true</code> is in your <code>.env</code> (not <code>DEMO_MODE</code>). Restart the dev server after changing env vars. Ensure the demo accounts exist in Auth.</p>
 
         <h4>Edge function returns 404</h4>
-        <p>The function may not be deployed. Run <code>supabase functions deploy function-name</code> or redeploy via your WRAPCODERS Cloud project.</p>
+        <p>The function may not be deployed. Run <code>supabase functions deploy function-name</code> or redeploy via your MPA Cloud project.</p>
 
         <h4>Credits not deducting / balance unchanged</h4>
         <p>Verify the user has a row in <code>promotion_credits</code>. If not, insert one with <code>balance: 0</code>. Check RLS policies allow the user to update their own credit balance.</p>
@@ -2331,8 +2331,7 @@ bun install && bun run build</pre
       <section class="doc-section" id="credits">
         <h2>Credits</h2>
         <p>
-          ZenBook is designed and developed by <a href="https://wrapcoders.com/" target="_blank"><strong>WRAPCODERS</strong></a
-          >.
+          ZenBook is designed and developed by <strong>MPA</strong>.
         </p>
         <h3>Technology Stack</h3>
         <ul>
@@ -2344,13 +2343,13 @@ bun install && bun run build</pre
           <li><strong>Maps:</strong> Leaflet with marker clustering</li>
           <li><strong>Charts:</strong> Recharts</li>
         </ul>
-        <p style="margin-top: 24px; font-size: 13px; color: var(--wc-text-muted)">&copy; 2026 <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a>. All rights reserved.</p>
+        <p style="margin-top: 24px; font-size: 13px; color: var(--wc-text-muted)">&copy; 2026 MPA. All rights reserved.</p>
       </section>
     </main>
 
     <!-- ═══════════ FOOTER ═══════════ -->
     <footer class="doc-footer">
-      <p>&copy; 2026 <a href="https://wrapcoders.com/" target="_blank">WRAPCODERS</a> — ZenBook Documentation v1.0.0</p>
+      <p>&copy; 2026 MPA — ZenBook Documentation v1.0.0</p>
     </footer>
 
     <script src="script.js"></script>

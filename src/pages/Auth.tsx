@@ -1266,7 +1266,7 @@ const Auth = () => {
             By signing up, you agree to our Terms of Service and Privacy Policy.
           </p>
           <p className="text-center text-[10px] text-muted-foreground/60 mt-2">
-            Powered by <a href="https://wrapcoders.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WRAPCODERS</a>
+            Powered by MPA
           </p>
         </div>
       </div>

@@ -1,9 +1,9 @@
 {
   "name": "zenbook",
   "version": "1.0.0",
-  "homepage": "https://zenbook.wrapcoders.com/",
+  "homepage": "https://zenbook.mpa.com/",
   "description": "ZenBook — Social Network Platform with Marketplace, Groups, Events & Real-Time Messaging",
-  "author": "WRAPCODERS",
+  "author": "MPA",
   "type": "module",
   "private": true,
   "main": "eslint.config.js",
