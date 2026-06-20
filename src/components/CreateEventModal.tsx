@@ -97,7 +97,7 @@ const CreateEventModal = ({ onClose }: CreateEventModalProps) => {
     if (values.coverImage) {
       const ext = values.coverImage.name.split(".").pop();
       const bucket = selectedSource.type === "group" ? "group-images" : "page-images";
-      const path = `events/${selectedSource.type}s/${selectedSource.id}/${Date.now()}.${ext}`;
+      const path = `${selectedSource.id}/events/${Date.now()}.${ext}`;
       const { error: upErr } = await supabase.storage.from(bucket).upload(path, values.coverImage);
       if (!upErr) {
         const { data: urlData } = supabase.storage.from(bucket).getPublicUrl(path);

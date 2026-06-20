@@ -122,9 +122,9 @@ const CreateGroup = ({ open, onClose }: CreateGroupProps) => {
     );
   };
 
-  const uploadImage = async (file: File, path: string) => {
+  const uploadImage = async (file: File, groupId: string, folder: "avatars" | "covers") => {
     const ext = file.name.split(".").pop();
-    const filePath = `${path}/${crypto.randomUUID()}.${ext}`;
+    const filePath = `${groupId}/${folder}/${crypto.randomUUID()}.${ext}`;
     const { error } = await supabase.storage
       .from("group-images")
       .upload(filePath, file);
@@ -137,12 +137,6 @@ const CreateGroup = ({ open, onClose }: CreateGroupProps) => {
     if (!user || !name.trim()) return;
     setCreating(true);
     try {
-      let avatarUrl: string | null = null;
-      let coverUrl: string | null = null;
-
-      if (avatarFile) avatarUrl = await uploadImage(avatarFile, "avatars");
-      if (coverFile) coverUrl = await uploadImage(coverFile, "covers");
-
       const { data: group, error } = await supabase
         .from("groups")
         .insert({
@@ -150,8 +144,8 @@ const CreateGroup = ({ open, onClose }: CreateGroupProps) => {
           description: description.trim() || null,
           privacy,
           created_by: user.id,
-          avatar_url: avatarUrl,
-          cover_photo_url: coverUrl,
+          avatar_url: null,
+          cover_photo_url: null,
           category,
           rules: rules.trim() || null,
         } as any)
@@ -160,9 +154,26 @@ const CreateGroup = ({ open, onClose }: CreateGroupProps) => {
       if (error) throw error;
 
       // Add creator as admin
-      await supabase
+      const { error: memberError } = await supabase
         .from("group_members")
         .insert({ group_id: group.id, user_id: user.id, role: "admin", status: "approved" });
+      if (memberError) throw memberError;
+
+      try {
+        const imageUpdates: { avatar_url?: string; cover_photo_url?: string } = {};
+        if (avatarFile) imageUpdates.avatar_url = await uploadImage(avatarFile, group.id, "avatars");
+        if (coverFile) imageUpdates.cover_photo_url = await uploadImage(coverFile, group.id, "covers");
+
+        if (Object.keys(imageUpdates).length > 0) {
+          const { error: imageUpdateError } = await supabase
+            .from("groups")
+            .update(imageUpdates)
+            .eq("id", group.id);
+          if (imageUpdateError) throw imageUpdateError;
+        }
+      } catch (imageError: any) {
+        toast.warning(imageError.message || "Group created, but image upload failed");
+      }
 
       // Invite selected friends
       if (selectedFriends.length > 0) {

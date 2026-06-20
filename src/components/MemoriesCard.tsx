@@ -46,6 +46,7 @@ const MemoriesCard = forwardRef<HTMLDivElement>((_, ref) => {
           .from("posts")
           .select("*")
           .eq("user_id", user.id)
+          .eq("archived", false)
           .gte("created_at", startOfDay.toISOString())
           .lt("created_at", endOfDay.toISOString())
           .order("created_at", { ascending: false });

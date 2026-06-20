@@ -73,7 +73,7 @@ const PageEvents = ({ pageId, isOwner }: PageEventsProps) => {
     let cover_image_url: string | null = null;
     if (values.coverImage) {
       const ext = values.coverImage.name.split(".").pop();
-      const path = `events/pages/${pageId}/${Date.now()}.${ext}`;
+      const path = `${pageId}/events/${Date.now()}.${ext}`;
       const { error: upErr } = await supabase.storage.from("page-images").upload(path, values.coverImage);
       if (!upErr) {
         const { data: urlData } = supabase.storage.from("page-images").getPublicUrl(path);

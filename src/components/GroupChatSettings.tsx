@@ -135,7 +135,7 @@ const GroupChatSettings = ({ open, onClose, conversationId, groupName, groupAvat
     setUploadingAvatar(true);
     try {
       const ext = file.name.split(".").pop() || "jpg";
-      const path = `group-avatars/${conversationId}.${ext}`;
+      const path = `${user.id}/group-avatars/${conversationId}.${ext}`;
       const { error: uploadError } = await supabase.storage
         .from("chat-attachments")
         .upload(path, file, { contentType: file.type, upsert: true });

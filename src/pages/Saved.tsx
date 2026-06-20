@@ -26,7 +26,7 @@ const Saved = () => {
       if (!saved || saved.length === 0) return [];
 
       const postIds = saved.map((s) => s.post_id);
-      const { data: posts } = await supabase.from("posts").select("*").in("id", postIds);
+      const { data: posts } = await supabase.from("posts").select("*").in("id", postIds).eq("archived", false);
 
       const userIds = [...new Set((posts || []).map((p: any) => p.user_id))];
       let profileMap = new Map();

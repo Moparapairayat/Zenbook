@@ -67,7 +67,7 @@ const UserProfileCard = ({ userId, children }: UserProfileCardProps) => {
     queryKey: ["profile-card-stats", userId],
     queryFn: async () => {
       const [{ count: postCount }, { count: friendCount }] = await Promise.all([
-        supabase.from("posts").select("*", { count: "exact", head: true }).eq("user_id", userId),
+        supabase.from("posts").select("*", { count: "exact", head: true }).eq("user_id", userId).eq("archived", false),
         supabase.from("friendships").select("*", { count: "exact", head: true }).eq("status", "accepted").or(`requester_id.eq.${userId},addressee_id.eq.${userId}`),
       ]);
       return { posts: postCount ?? 0, friends: friendCount ?? 0 };

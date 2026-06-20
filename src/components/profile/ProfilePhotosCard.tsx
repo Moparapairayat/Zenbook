@@ -18,6 +18,7 @@ const ProfilePhotosCard = ({ profileUserId }: ProfilePhotosCardProps) => {
         .from("posts")
         .select("id, image_url, image_urls")
         .eq("user_id", profileUserId)
+        .eq("archived", false)
         .not("image_url", "is", null)
         .order("created_at", { ascending: false })
         .limit(9);

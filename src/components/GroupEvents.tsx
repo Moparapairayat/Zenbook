@@ -74,7 +74,7 @@ const GroupEvents = ({ groupId, isAdminOrMod }: GroupEventsProps) => {
     let cover_image_url: string | null = null;
     if (values.coverImage) {
       const ext = values.coverImage.name.split(".").pop();
-      const path = `events/${groupId}/${Date.now()}.${ext}`;
+      const path = `${groupId}/events/${Date.now()}.${ext}`;
       const { error: upErr } = await supabase.storage.from("group-images").upload(path, values.coverImage);
       if (!upErr) {
         const { data: urlData } = supabase.storage.from("group-images").getPublicUrl(path);

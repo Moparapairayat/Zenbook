@@ -28,6 +28,7 @@ const fetchPostsPage = async ({ pageParam, myGroupIds, followedPageIds }: { page
   const regularPostsPromise = supabase
     .from("posts")
     .select("*")
+    .eq("archived", false)
     .order("created_at", { ascending: false })
     .range(from, to);
 
@@ -126,7 +127,9 @@ const Index = () => {
 
       // Determine which table to query
       const table = highlightSource === "group" ? "group_posts" : highlightSource === "page" ? "page_posts" : "posts";
-      const { data, error } = await supabase.from(table).select("*").eq("id", highlightPostId).maybeSingle();
+      let postQuery = supabase.from(table).select("*").eq("id", highlightPostId);
+      if (table === "posts") postQuery = postQuery.eq("archived", false);
+      const { data, error } = await postQuery.maybeSingle();
       if (error || !data) return null;
 
       // Fetch profile

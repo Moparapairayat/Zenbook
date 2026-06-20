@@ -32,6 +32,7 @@ const useMemoriesNotification = () => {
           .from("posts")
           .select("id", { count: "exact", head: true })
           .eq("user_id", user.id)
+          .eq("archived", false)
           .gte("created_at", startOfDay.toISOString())
           .lt("created_at", endOfDay.toISOString());
 

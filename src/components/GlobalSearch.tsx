@@ -64,6 +64,7 @@ const GlobalSearch = () => {
         .from("posts")
         .select("id, content, user_id, created_at")
         .ilike("content", searchTerm)
+        .eq("archived", false)
         .order("created_at", { ascending: false })
         .limit(8);
 
@@ -247,7 +248,7 @@ const GlobalSearch = () => {
                     key={post.id}
                     className="w-full flex items-start gap-3 px-3 py-2.5 hover:bg-secondary transition-colors text-left"
                     onClick={() => {
-                      navigate(`/`);
+                      navigate(`/?post=${post.id}`);
                       setOpen(false);
                       setQuery("");
                     }}
@@ -271,7 +272,7 @@ const GlobalSearch = () => {
                     key={conv.id}
                     className="w-full flex items-center gap-3 px-3 py-2.5 hover:bg-secondary transition-colors text-left"
                     onClick={() => {
-                      navigate(`/messages?conversationId=${conv.id}`);
+                      navigate(`/messages?conversation=${conv.id}`);
                       setOpen(false);
                       setQuery("");
                     }}

@@ -35,6 +35,7 @@ const Hashtag = () => {
           .from("posts")
           .select("*")
           .ilike("content", `%#${decodedTag}%`)
+          .eq("archived", false)
           .order("created_at", { ascending: false })
           .range(from, to),
         supabase
@@ -117,7 +118,7 @@ const Hashtag = () => {
     queryKey: ["hashtag-stats", decodedTag],
     queryFn: async () => {
       const [r1, r2, r3] = await Promise.all([
-        supabase.from("posts").select("id", { count: "exact", head: true }).ilike("content", `%#${decodedTag}%`),
+        supabase.from("posts").select("id", { count: "exact", head: true }).ilike("content", `%#${decodedTag}%`).eq("archived", false),
         supabase.from("group_posts").select("id", { count: "exact", head: true }).ilike("content", `%#${decodedTag}%`),
         supabase.from("page_posts").select("id", { count: "exact", head: true }).ilike("content", `%#${decodedTag}%`),
       ]);
@@ -125,7 +126,7 @@ const Hashtag = () => {
 
       // Unique authors
       const [a1, a2, a3] = await Promise.all([
-        supabase.from("posts").select("user_id").ilike("content", `%#${decodedTag}%`),
+        supabase.from("posts").select("user_id").ilike("content", `%#${decodedTag}%`).eq("archived", false),
         supabase.from("group_posts").select("user_id").ilike("content", `%#${decodedTag}%`),
         supabase.from("page_posts").select("created_by").ilike("content", `%#${decodedTag}%`),
       ]);
@@ -148,6 +149,7 @@ const Hashtag = () => {
         .from("posts")
         .select("content")
         .ilike("content", `%#${decodedTag}%`)
+        .eq("archived", false)
         .order("created_at", { ascending: false })
         .limit(50);
 

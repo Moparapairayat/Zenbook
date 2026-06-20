@@ -318,7 +318,7 @@ const GroupDetail = () => {
     setUploading(true);
     try {
       const ext = file.name.split(".").pop();
-      const path = `${groupId}/${type}-${Date.now()}.${ext}`;
+      const path = `${groupId}/${type}s/${Date.now()}.${ext}`;
       const { error: uploadError } = await supabase.storage
         .from("group-images")
         .upload(path, file, { upsert: true });

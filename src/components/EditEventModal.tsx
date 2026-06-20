@@ -53,7 +53,7 @@ const EditEventModal = ({ event, onClose }: EditEventModalProps) => {
       const ext = values.coverImage.name.split(".").pop();
       const bucket = event.group_id ? "group-images" : "page-images";
       const sourceId = event.group_id || event.page_id;
-      const path = `events/${event.group_id ? "groups" : "pages"}/${sourceId}/${Date.now()}.${ext}`;
+      const path = `${sourceId}/events/${Date.now()}.${ext}`;
       const { error: upErr } = await supabase.storage.from(bucket).upload(path, values.coverImage);
       if (!upErr) {
         const { data: urlData } = supabase.storage.from(bucket).getPublicUrl(path);

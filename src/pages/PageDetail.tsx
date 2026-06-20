@@ -383,7 +383,7 @@ const PageDetail = () => {
       let image_url: string | null = null;
       if (postImage) {
         const ext = postImage.name.split(".").pop();
-        const path = `page-posts/${page.id}/${Date.now()}.${ext}`;
+        const path = `${page.id}/posts/${Date.now()}.${ext}`;
         const { error: upErr } = await supabase.storage.from("page-images").upload(path, postImage);
         if (upErr) throw upErr;
         const { data: urlData } = supabase.storage.from("page-images").getPublicUrl(path);
@@ -536,7 +536,7 @@ const PageDetail = () => {
     setUploadingCover(true);
     try {
       const ext = file.name.split(".").pop();
-      const path = `page-covers/${page.id}/${Date.now()}.${ext}`;
+      const path = `${page.id}/covers/${Date.now()}.${ext}`;
       const { error: upErr } = await supabase.storage.from("page-images").upload(path, file);
       if (upErr) throw upErr;
       const { data: urlData } = supabase.storage.from("page-images").getPublicUrl(path);

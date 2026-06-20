@@ -48,36 +48,42 @@ const CreatePage = ({ open, onClose }: CreatePageProps) => {
 
     setLoading(true);
     try {
-      let avatar_url: string | null = null;
-      let cover_photo_url: string | null = null;
-
-      const uploadImage = async (file: File, folder: string) => {
+      const uploadImage = async (file: File, pageId: string, folder: "avatars" | "covers") => {
         const ext = file.name.split(".").pop();
-        const path = `${folder}/${user.id}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+        const path = `${pageId}/${folder}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
         const { error: uploadError } = await supabase.storage.from("page-images").upload(path, file);
         if (uploadError) throw uploadError;
         const { data: urlData } = supabase.storage.from("page-images").getPublicUrl(path);
         return urlData.publicUrl;
       };
 
-      if (avatarFile) {
-        avatar_url = await uploadImage(avatarFile, "pages");
-      }
-      if (coverFile) {
-        cover_photo_url = await uploadImage(coverFile, "page-covers");
-      }
-
       const { data: newPage, error } = await supabase.from("pages").insert({
         name: name.trim(),
         slug: generateSlug(name.trim()),
         category,
         description: description.trim() || null,
-        avatar_url,
-        cover_photo_url,
+        avatar_url: null,
+        cover_photo_url: null,
         created_by: user.id,
       }).select("id").single();
 
       if (error) throw error;
+
+      try {
+        const imageUpdates: { avatar_url?: string; cover_photo_url?: string } = {};
+        if (avatarFile) imageUpdates.avatar_url = await uploadImage(avatarFile, newPage.id, "avatars");
+        if (coverFile) imageUpdates.cover_photo_url = await uploadImage(coverFile, newPage.id, "covers");
+
+        if (Object.keys(imageUpdates).length > 0) {
+          const { error: updateError } = await supabase
+            .from("pages")
+            .update(imageUpdates)
+            .eq("id", newPage.id);
+          if (updateError) throw updateError;
+        }
+      } catch (imageError: any) {
+        toast.warning(imageError.message || "Page created, but image upload failed");
+      }
 
       // Auto-follow the page so posts appear in the creator's feed
       if (newPage) {

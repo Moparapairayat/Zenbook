@@ -73,7 +73,7 @@ const Messages = () => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const targetUserId = searchParams.get("userId");
-  const targetConversationId = searchParams.get("conversation");
+  const targetConversationId = searchParams.get("conversation") || searchParams.get("conversationId");
   const { isOnline } = useOnlinePresence();
   const { typingUserId, typingUserIds, sendTyping, sendStopTyping } = useTypingIndicator(activeConversation);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);

@@ -44,7 +44,8 @@ const TrendingPosts = () => {
       const { data: posts } = await supabase
         .from("posts")
         .select("id, content, user_id, image_url")
-        .in("id", topIds);
+        .in("id", topIds)
+        .eq("archived", false);
 
       if (!posts?.length) return [];
 

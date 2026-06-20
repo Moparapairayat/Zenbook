@@ -49,6 +49,7 @@ const ProfileTabContent = ({ profileUserId, isOwn, activeTab, profile, editingBi
         .from("posts")
         .select("*")
         .eq("user_id", profileUserId)
+        .eq("archived", false)
         .order("created_at", { ascending: false });
       if (error) throw error;
       const { data: prof } = await supabase
